@@ -1,0 +1,25 @@
+{
+  "studioName": "5A1F",
+  "studioFullName": {
+    "ar": "استوديو 5A1F",
+    "en": "5A1F Studio"
+  },
+  "whatsappNumber": "212754427433",
+  "url": "https://5a1f.vercel.app",
+  "ogImage": "/og-image.png",
+  "logo": "media/logo.svg",
+  "defaultLanguage": "ar",
+  "features": {
+    "competitions": false
+  },
+  "joinForm": {
+    "ageMode": "exact",
+    "roles": [
+      { "id": "programmer", "label": { "ar": "مبرمج ألعاب", "en": "Game Programmer" } },
+      { "id": "3d_artist", "label": { "ar": "مصمم ثلاثي الأبعاد", "en": "3D Artist" } },
+      { "id": "2d_artist", "label": { "ar": "رسام ثنائي الأبعاد / واجهات", "en": "2D / UI Artist" } },
+      { "id": "sound_designer", "label": { "ar": "مهندس صوتيات", "en": "Sound Designer" } },
+      { "id": "other", "label": { "ar": "تخصص آخر", "en": "Other Specialty" } }
+    ]
+  }
+}

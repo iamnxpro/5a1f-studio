@@ -1,0 +1,28 @@
+[
+  {
+    "id": "placeholder-game-01",
+    "title": { "ar": "PLACEHOLDER", "en": "PLACEHOLDER" },
+    "tagline": { "ar": "PLACEHOLDER", "en": "PLACEHOLDER" },
+    "description": { "ar": "PLACEHOLDER", "en": "PLACEHOLDER" },
+    "genres": [{ "ar": "PLACEHOLDER", "en": "PLACEHOLDER" }],
+    "status": "coming_soon",
+    "cover": null,
+    "screenshots": [],
+    "links": [],
+    "featured": true,
+    "year": "2026"
+  },
+  {
+    "id": "placeholder-game-02",
+    "title": { "ar": "PLACEHOLDER", "en": "PLACEHOLDER" },
+    "tagline": { "ar": "PLACEHOLDER", "en": "PLACEHOLDER" },
+    "description": { "ar": "PLACEHOLDER", "en": "PLACEHOLDER" },
+    "genres": [{ "ar": "PLACEHOLDER", "en": "PLACEHOLDER" }],
+    "status": "coming_soon",
+    "cover": null,
+    "screenshots": [],
+    "links": [],
+    "featured": false,
+    "year": "2026"
+  }
+]

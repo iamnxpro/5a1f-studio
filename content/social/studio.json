@@ -1,0 +1,37 @@
+[
+  {
+    "id": "discord",
+    "label": { "ar": "ديسكورد", "en": "Discord" },
+    "href": "",
+    "icon": "media/images/discord.png",
+    "type": "custom"
+  },
+  {
+    "id": "youtube",
+    "label": { "ar": "يوتيوب", "en": "YouTube" },
+    "href": "",
+    "icon": "media/images/youtube.svg",
+    "type": "custom"
+  },
+  {
+    "id": "instagram",
+    "label": { "ar": "إنستغرام", "en": "Instagram" },
+    "href": "",
+    "icon": "media/images/instagram.webp",
+    "type": "custom"
+  },
+  {
+    "id": "github",
+    "label": { "ar": "جيتهاب", "en": "GitHub" },
+    "href": "",
+    "icon": "media/images/github.webp",
+    "type": "custom"
+  },
+  {
+    "id": "itchio",
+    "label": { "ar": "آيتش.آي.أو", "en": "itch.io" },
+    "href": "",
+    "icon": "media/images/itchio.svg",
+    "type": "custom"
+  }
+]

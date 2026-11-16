@@ -1,0 +1,163 @@
+/*
+ * =============================================================================
+ *  5A1F STUDIO — DESIGN TOKENS
+ * =============================================================================
+ *  Source of truth: iamnxpro/PORTFOLIO (client/src/index.css).
+ *  Extracted identity = warm editorial "دفتر المبدع":
+ *    paper #f5f0e5 · ink #222420 · olive #254f43 · coral #cf6248
+ *  The studio site is a HYBRID evolution of that identity:
+ *    - editorial sections keep the paper / ink / olive / coral language
+ *    - game & software zones reuse the SAME hues on deep ink surfaces,
+ *      with olive/coral-derived neon for game-state signalling only.
+ *  No new brand hues were invented; every value below is either extracted
+ *  from the portfolio or mathematically derived from the extracted palette.
+ * =============================================================================
+ */
+
+:root {
+  /* ---------- 1. RAW BRAND PALETTE (extracted, do not change) ---------- */
+  --brand-paper: #f5f0e5;
+  --brand-paper-deep: #e8dfcf;
+  --brand-paper-raised: #fffbf0;
+  --brand-ink: #222420;
+  --brand-ink-soft: #45473f;
+  --brand-ink-faint: #67675d;
+  --brand-olive: #254f43;
+  --brand-olive-deep: #183c32;
+  --brand-olive-soft: #d8e0d0;
+  --brand-coral: #cf6248;
+  --brand-coral-deep: #a8452f;
+  --brand-rule: rgba(34, 36, 32, 0.15);
+  --brand-rule-strong: rgba(34, 36, 32, 0.28);
+
+  /* ---------- 2. DARK GAME-ZONE SURFACES (derived from --brand-ink) ---------- */
+  --brand-void: #0c100e;
+  --brand-void-raised: #121915;
+  --brand-void-card: #16201a;
+  --brand-void-line: #23302a;
+  --brand-void-rule: rgba(242, 245, 238, 0.12);
+  --brand-void-ink: #f2f5ee;
+  --brand-void-muted: #9fb3a4;
+
+  /* Neon is a lightened olive / coral, used only on dark surfaces. */
+  --brand-neon-primary: #6fe3a1;
+  --brand-neon-secondary: #ff7a5c;
+
+  /* ---------- 3. SEMANTIC TOKENS — LIGHT (editorial) ---------- */
+  --color-bg-primary: var(--brand-paper);
+  --color-bg-elevated: var(--brand-paper-raised);
+  --color-bg-sunken: var(--brand-paper-deep);
+  --color-bg-inverse: var(--brand-void);
+
+  --color-fg-primary: var(--brand-ink);
+  --color-fg-secondary: var(--brand-ink-soft);
+  --color-fg-muted: var(--brand-ink-faint);
+  --color-fg-inverse: var(--brand-void-ink);
+  --color-fg-inverse-muted: var(--brand-void-muted);
+
+  --color-border: var(--brand-rule);
+  --color-border-strong: var(--brand-rule-strong);
+  --color-border-inverse: var(--brand-void-rule);
+
+  --color-accent: var(--brand-olive);
+  --color-accent-strong: var(--brand-olive-deep);
+  --color-accent-soft: var(--brand-olive-soft);
+  --color-highlight: var(--brand-coral);
+  --color-highlight-strong: var(--brand-coral-deep);
+
+  /* ---------- 4. SEMANTIC TOKENS — DARK (games / software) ---------- */
+  --color-void: var(--brand-void);
+  --color-void-raised: var(--brand-void-raised);
+  --color-void-card: var(--brand-void-card);
+  --color-void-border: var(--brand-void-rule);
+
+  --color-neon-primary: var(--brand-neon-primary);
+  --color-neon-secondary: var(--brand-neon-secondary);
+
+  --glow-primary: 0 0 28px rgba(111, 227, 161, 0.28);
+  --glow-primary-strong: 0 0 44px rgba(111, 227, 161, 0.42);
+  --glow-secondary: 0 0 28px rgba(255, 122, 92, 0.26);
+  --glow-inset: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+
+  /* ---------- 5. GLASSMORPHISM (navbar / overlays) ---------- */
+  /* 0.82 keeps the muted navbar text at AA contrast even over the paper pages. */
+  --glass-bg: rgba(12, 16, 14, 0.82);
+  --glass-bg-light: rgba(245, 240, 229, 0.82);
+  --glass-border: rgba(242, 245, 238, 0.12);
+  --glass-blur: 14px;
+  --glass-blur-strong: 22px;
+
+  /* ---------- 6. TYPOGRAPHY ---------- */
+  --font-sans: "Inter Variable", "Inter", "Segoe UI", system-ui, -apple-system,
+    "Helvetica Neue", Arial, sans-serif;
+  --font-serif-en: "DM Serif Display", Georgia, "Times New Roman", serif;
+  --font-arabic-sans: "Cairo", "Tajawal", "Noto Naskh Arabic", "Segoe UI",
+    Tahoma, Arial, sans-serif;
+  --font-arabic-serif: "Cairo", "Tajawal", "Noto Naskh Arabic",
+    "Noto Serif Arabic", "Segoe UI", Tahoma, serif;
+  --font-display: "Orbitron", "Inter", "Segoe UI", sans-serif;
+
+  --text-2xs: 0.625rem; /* 10px — rail meta, overlines */
+  --text-xs: 0.6875rem; /* 11px — labels, badges */
+  --text-sm: 0.8125rem; /* 13px — captions, pills */
+  --text-base: 0.9375rem; /* 15px — body */
+  --text-md: 1.0625rem; /* 17px — lead paragraphs */
+  --text-lg: clamp(1.15rem, 1.4vw, 1.35rem);
+  --text-xl: clamp(1.35rem, 2vw, 1.75rem);
+  --text-2xl: clamp(1.75rem, 3vw, 2.5rem);
+  --text-3xl: clamp(2.25rem, 4vw, 3.4rem);
+  --text-display: clamp(2.6rem, 6vw, 5.4rem);
+
+  --leading-tight: 0.98;
+  --leading-snug: 1.35;
+  --leading-body: 1.9;
+
+  --tracking-tight: -0.04em;
+  --tracking-label: 0.08em;
+  --tracking-wide: 0.14em;
+
+  /* ---------- 7. SPACING SCALE ---------- */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+
+  --section-pad-x: clamp(20px, 7vw, 108px);
+  --section-pad-y: clamp(72px, 11vw, 150px);
+  --shell-max: 1440px;
+
+  /* ---------- 8. RADII / BORDERS (portfolio is deliberately sharp) ---------- */
+  --radius-card: 2px;
+  --radius-panel: 4px;
+  --radius-pill: 999px;
+  --radius-circle: 50%;
+  --border-hairline: 1px solid var(--color-border);
+  --border-hairline-inverse: 1px solid var(--color-border-inverse);
+
+  /* ---------- 9. MOTION (extracted easing + timings) ---------- */
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+  --duration-fast: 180ms;
+  --duration-base: 320ms;
+  --duration-smooth: 600ms;
+  --transition-fast: 180ms var(--ease-out);
+  --transition-base: 320ms var(--ease-out);
+  --transition-smooth: 600ms var(--ease-out);
+
+  /* ---------- 10. Z-INDEX SCALE ---------- */
+  --z-base: 0;
+  --z-raised: 10;
+  --z-sticky: 40;
+  --z-drawer: 60;
+  --z-overlay: 80;
+  --z-preloader: 100;
+  --z-toast: 110;
+}

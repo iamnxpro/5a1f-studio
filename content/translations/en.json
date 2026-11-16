@@ -1,0 +1,217 @@
+{
+  "common": {
+    "loading": "Loading…",
+    "skip": "Skip",
+    "enterStudio": "Enter Studio",
+    "close": "Close",
+    "menu": "Menu",
+    "backToTop": "Back to top",
+    "comingSoon": "Coming soon",
+    "available": "Available",
+    "beta": "Beta",
+    "inDevelopment": "In development",
+    "viewProject": "View project",
+    "readMore": "Read more",
+    "visit": "Visit",
+    "download": "Download",
+    "repository": "Repository",
+    "scroll": "Explore",
+    "language": "العربية",
+    "placeholder": "Placeholder",
+    "notFound": "Not found",
+    "projectUntitled": "Untitled project",
+    "viewAll": "View all"
+  },
+  "nav": {
+    "home": "Home",
+    "games": "Games",
+    "about": "About us",
+    "join": "Join us",
+    "contact": "Contact",
+    "software": "Software",
+    "blog": "Blog",
+    "team": "Team"
+  },
+  "hero": {
+    "eyebrow": "Independent studio · 2026",
+    "titleLine1": "We build worlds",
+    "titleLine2": "worth playing.",
+    "tagline": "5A1F Studio joins software engineering with game art to craft precise independent experiences, from the first idea to the last detail.",
+    "ctaExplore": "Explore the games",
+    "ctaJoin": "Join the studio",
+    "status": "The studio is in pre-launch",
+    "brandNote": "Games · Software · Design"
+  },
+  "about": {
+    "label": "About us",
+    "title": "Three paths, one studio.",
+    "body": "5A1F was born where programming meets visual art: Amin in software engineering and game development, Abdullah in 3D modeling and design, then Kareem joining the team. We work deliberately and prefer correct details over big promises.",
+    "quote": "We make what we love to play.",
+    "teamLabel": "The team",
+    "teamTitle": "The people behind 5A1F.",
+    "teamSubtitle": "Every member owns a full craft. Open any card for the full profile."
+  },
+  "games": {
+    "label": "Games division",
+    "title": "Projects in the workshop.",
+    "subtitle": "Every title here is built collaboratively by the studio. Release dates will be announced when they are real — no promises ahead of time.",
+    "empty": "No games published yet. The first title is on its way.",
+    "genreLabel": "Genre",
+    "platforms": "Platforms",
+    "comingSoonNote": "In development — play links unlock at launch."
+  },
+  "software": {
+    "label": "Software division",
+    "title": "Tools built by Amin.",
+    "subtitle": "Desktop applications, developer utilities and launchers built to clear engineering standards.",
+    "empty": "No software published yet.",
+    "specs": "Specifications",
+    "byAmin": "Built by Amin",
+    "download": "Download",
+    "source": "Source code"
+  },
+  "team": {
+    "label": "Member profile",
+    "member": "Team member",
+    "since": "Since",
+    "skills": "Skills",
+    "social": "Social links",
+    "contribution": "Contribution to the studio",
+    "back": "Back to the team",
+    "notFound": "This member does not exist.",
+    "avatarAlt": "Avatar"
+  },
+  "join": {
+    "label": "Join us",
+    "title": "Want to build something with us?",
+    "subtitle": "We are always looking for programmers, artists and sound designers who care about detail as much as we do.",
+    "fields": {
+      "name": "First name or nickname",
+      "age": "Age",
+      "ageRange": "Age range",
+      "skills": "Skills & experience",
+      "role": "Desired specialty",
+      "contribution": "What can you offer the studio?",
+      "contactHandle": "Preferred contact handle (e.g. Discord username)"
+    },
+    "placeholders": {
+      "name": "Your name or nickname",
+      "age": "e.g. 17",
+      "skills": "Engines, languages, tools, years of experience…",
+      "role": "Choose a specialty",
+      "contribution": "Briefly describe what you would love to work on.",
+      "contactHandle": "Username only — never write a phone number."
+    },
+    "ageRange": {
+      "under": "Under 18",
+      "over": "18 or older"
+    },
+    "privacyNoticeTitle": "Before you send",
+    "privacyNotice": "Your data is not stored on this site; it is only sent to the studio's WhatsApp when you press send. Do not write a phone number, an address, or a school name. If you are under 18, get a guardian's permission before contacting anyone.",
+    "submit": "Send application via WhatsApp",
+    "submitting": "Preparing…",
+    "success": "Your message is ready.",
+    "successHint": "Finish sending it in the WhatsApp window that opened.",
+    "errors": {
+      "required": "This field is required.",
+      "ageNumber": "Enter a valid age.",
+      "ageRange": "Choose an age range.",
+      "minLength": "This text is too short.",
+      "fixFields": "Check the highlighted fields."
+    }
+  },
+  "contact": {
+    "label": "Contact",
+    "title": "Where ideas meet.",
+    "subtitle": "For inquiries, collaboration or joining: one clear channel.",
+    "studioOrbitTitle": "Studio channels",
+    "teamOrbitTitle": "Team channels",
+    "email": "Email us",
+    "whatsapp": "Studio WhatsApp",
+    "copyEmail": "Copy email",
+    "emailCopied": "Email copied",
+    "pauseHint": "Hover any orbit to pause it instantly."
+  },
+  "blog": {
+    "label": "Devlog",
+    "title": "Notes from the workshop.",
+    "subtitle": "Design decisions, programming experiments and lessons from building small games.",
+    "empty": "No articles yet.",
+    "back": "Back to the blog",
+    "readingTime": "Read",
+    "minutes": "min",
+    "languageNotice": "This article is currently available in the other language only.",
+    "published": "Published",
+    "tags": "Tags"
+  },
+  "footer": {
+    "rights": "All rights reserved.",
+    "privacy": "Privacy policy",
+    "credits": "Credits",
+    "madeWith": "Crafted with care at 5A1F",
+    "tagline": "An independent game & software studio.",
+    "studio": "5A1F Studio",
+    "pages": "Pages",
+    "channels": "Channels"
+  },
+  "preloader": {
+    "initializing": "Initializing the studio",
+    "assets": "Preparing assets",
+    "enter": "Enter Studio",
+    "skip": "Skip",
+    "hint": "Audio starts only after entry.",
+    "audioNote": "Click to enter · soft audio"
+  },
+  "privacy": {
+    "label": "Privacy",
+    "title": "Privacy policy",
+    "intro": "We respect our visitors. This page explains what we collect and what we do not, in plain language.",
+    "dataTitle": "Data",
+    "dataBody": "5A1F has no server and no database. We store no personal data on this site. The join form assembles a WhatsApp message inside your browser only, then opens it for you to send yourself.",
+    "cookiesTitle": "Cookies",
+    "cookiesBody": "We use no tracking or advertising cookies. We only store your local preferences (language, audio, motion) in localStorage on your device.",
+    "contactTitle": "Contact",
+    "contactBody": "For any privacy question, use the official studio channel on the contact page.",
+    "back": "Back to home"
+  },
+  "notFound": {
+    "title": "Page not found",
+    "body": "The link you opened does not lead to a page inside the studio.",
+    "back": "Back to home"
+  },
+  "a11y": {
+    "toggleLanguage": "Change language",
+    "mute": "Mute audio",
+    "unmute": "Unmute audio",
+    "motionOff": "Disable motion",
+    "motionOn": "Enable motion",
+    "scrollProgress": "Page scroll progress",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "openInNewTab": "Opens in a new tab",
+    "logoAlt": "5A1F Studio logo",
+    "skipToContent": "Skip to content",
+    "mainNav": "Main navigation",
+    "footerNav": "Footer navigation"
+  },
+  "foundation": {
+    "label": "Phase one",
+    "title": "The visual foundation.",
+    "subtitle": "A temporary Phase 1 verification build: colour tokens, typography and the content engine.",
+    "paletteTitle": "Extracted palette",
+    "paletteNote": "Values are lifted directly from Amin's portfolio, with derived dark surfaces for the game zones.",
+    "typeTitle": "Typography",
+    "typeNote": "English is bundled locally. Arabic is awaiting the studio's font files.",
+    "contentTitle": "Content engine",
+    "contentNote": "Every count below is read from the content folder with zero network requests.",
+    "fontsTitle": "Font status",
+    "fontsNote": "No external network requests are made.",
+    "arabicPending": "Arabic font: awaiting files",
+    "latinReady": "Latin fonts: self-hosted",
+    "teamCount": "Team members",
+    "gamesCount": "Registered games",
+    "softwareCount": "Registered software",
+    "langLabel": "Language",
+    "dirLabel": "Direction"
+  }
+}

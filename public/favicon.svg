@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="5A1F Studio">
+  <title>5A1F Studio</title>
+  <defs>
+    <linearGradient id="iconGlow" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#6fe3a1" stop-opacity=".18"/>
+      <stop offset="1" stop-color="#ff7a5c" stop-opacity=".08"/>
+    </linearGradient>
+    <clipPath id="iconClip">
+      <rect width="512" height="512" rx="112"/>
+    </clipPath>
+  </defs>
+  <g clip-path="url(#iconClip)">
+    <rect width="512" height="512" fill="#0c100e"/>
+    <circle cx="78" cy="54" r="230" fill="url(#iconGlow)"/>
+    <circle cx="474" cy="486" r="210" fill="#cf6248" opacity=".07"/>
+    <path d="M0 128H512M0 256H512M0 384H512M128 0V512M256 0V512M384 0V512" stroke="#f2f5ee" stroke-opacity=".035" stroke-width="1"/>
+  </g>
+  <rect x="1.5" y="1.5" width="509" height="509" rx="110.5" fill="none" stroke="#254f43" stroke-width="3"/>
+  <g transform="translate(54 183) scale(0.36)">
+    <path fill="#b4c2fe" fill-rule="evenodd" d="M1108,10 L868,10 L868,361 L945,360 L946,264 L1083,264 L1084,185 L946,184 L946,100 L948,95 L1108,95 ZM709,10 L584,135 L584,137 L637,190 L640,190 L703,126 L710,127 L709,360 L787,360 L788,10 ZM308,10 L309,360 L387,360 L388,281 L465,282 L466,360 L544,360 L544,11 ZM388,108 L465,109 L464,191 L387,190 ZM10,10 L10,237 L178,239 L177,281 L12,280 L11,357 L256,359 L255,162 L106,159 L107,87 L255,89 L256,12 L166,10 Z"/>
+  </g>
+  <circle cx="425" cy="87" r="10" fill="#6fe3a1"/>
+  <circle cx="425" cy="87" r="21" fill="none" stroke="#6fe3a1" stroke-opacity=".28" stroke-width="2"/>
+</svg>
