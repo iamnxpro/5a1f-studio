@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { mediaUrl, site, studioSocial, teamMembers } from "@/lib/contentLoader";
+import { mediaUrl, site } from "@/lib/contentLoader";
 
 type PreloadState = {
   progress: number;
@@ -24,8 +24,9 @@ function loadFont(descriptor: string): Promise<void> {
 }
 
 /**
- * Real asset progress: every bundled image that the UI can show is decoded,
- * and the self-hosted fonts are loaded. No fake timers.
+ * Real asset progress: the visible brand mark is decoded and the self-hosted
+ * fonts are loaded. Below-the-fold images are intentionally left to the
+ * browser so a slow connection cannot hold the preloader at 99%.
  */
 export function usePreloadProgress(): PreloadState {
   const [progress, setProgress] = useState(0);
@@ -34,12 +35,7 @@ export function usePreloadProgress(): PreloadState {
   useEffect(() => {
     let cancelled = false;
 
-    const assetPaths = [
-      site.logo,
-      ...teamMembers.map((member) => member.avatar),
-      ...teamMembers.flatMap((member) => member.social.map((link) => link.icon)),
-      ...studioSocial.map((link) => link.icon),
-    ];
+    const assetPaths = [site.logo];
 
     const urls = new Set<string>();
     for (const path of assetPaths) {
