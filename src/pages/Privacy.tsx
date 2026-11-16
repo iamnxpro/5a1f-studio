@@ -1,9 +1,16 @@
 import { ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { usePageMeta } from "@/hooks/usePageMeta";
+import { site } from "@/lib/contentLoader";
 
 export default function Privacy() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
+
+  usePageMeta({
+    title: `${t("privacy.title")} - ${site.studioFullName[language]}`,
+    description: t("privacy.intro"),
+  });
 
   const sections = [
     { title: t("privacy.dataTitle"), body: t("privacy.dataBody") },
