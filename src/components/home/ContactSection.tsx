@@ -9,7 +9,6 @@ import {
   MousePointer2,
 } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
-import { SocialLinks } from "@/components/ui/SocialLinks";
 import { TeamAvatar } from "@/components/ui/TeamAvatar";
 import { useLanguage } from "@/contexts/LanguageContext";
 import {
@@ -18,8 +17,9 @@ import {
   studioSocial,
   teamMembers,
 } from "@/lib/contentLoader";
-import { emailAddress, whatsappHref } from "@/lib/presentation";
-import { isConfiguredHref } from "@/lib/utils";
+import { whatsappHref } from "@/lib/presentation";
+import { cn, isConfiguredHref, isExternalHref } from "@/lib/utils";
+import type { TeamMember } from "@/types/content";
 
 type Channel = {
   id: string;
@@ -52,11 +52,88 @@ function ChannelIcon({ channel }: { channel: Channel }) {
   );
 }
 
+function MemberOrbit({ member }: { member: TeamMember }) {
+  const { language, t } = useLanguage();
+  const links = member.social.filter((link) => isConfiguredHref(link.href));
+
+  return (
+    <div className="member-orbit relative grid size-32 shrink-0 place-items-center">
+      <span
+        aria-hidden="true"
+        className="orbit-spin-reverse absolute inset-1 rounded-full border border-dashed border-[color-mix(in_srgb,var(--color-neon-primary)_24%,transparent)]"
+      />
+      <span
+        aria-hidden="true"
+        className="absolute inset-6 rounded-full border border-[color-mix(in_srgb,var(--color-neon-secondary)_18%,transparent)]"
+      />
+      <TeamAvatar
+        member={member}
+        className="size-14 border-[var(--color-void-border)] text-[var(--color-neon-primary)]"
+      />
+
+      {links.length > 0 && (
+        <ul
+          aria-label={`${member.name[language]} - ${t("contact.teamOrbitTitle")}`}
+          className="orbit-spin absolute inset-0"
+        >
+          {links.map((link, index) => {
+            const angle = -90 + (360 / links.length) * index;
+            const icon = mediaUrl(link.icon);
+            const external = isExternalHref(link.href);
+            const label = link.label[language];
+
+            return (
+              <li
+                key={link.id}
+                className="absolute left-1/2 top-1/2"
+                style={{
+                  transform: `translate(-50%, -50%) rotate(${angle}deg) translateX(2.75rem) rotate(${-angle}deg)`,
+                }}
+              >
+                <span className="orbit-counter block">
+                  <a
+                    href={link.href}
+                    {...(external
+                      ? { target: "_blank", rel: "noopener noreferrer" }
+                      : {})}
+                    aria-label={`${label}${external ? ` (${t("a11y.openInNewTab")})` : ""}`}
+                    className={cn(
+                      "grid size-7 place-items-center rounded-full border border-[var(--color-void-border)]",
+                      "bg-[color-mix(in_srgb,var(--color-void-raised)_88%,transparent)] text-[var(--color-fg-inverse-muted)]",
+                      "transition-colors hover:border-[var(--color-neon-primary)] hover:text-[var(--color-neon-primary)]",
+                      "focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-neon-primary)]",
+                    )}
+                  >
+                    {icon ? (
+                      <img
+                        src={icon}
+                        alt=""
+                        aria-hidden="true"
+                        loading="lazy"
+                        decoding="async"
+                        className="size-3.5 object-contain opacity-90"
+                      />
+                    ) : (
+                      <Link2 size={14} aria-hidden="true" />
+                    )}
+                  </a>
+                </span>
+              </li>
+            );
+          })}
+        </ul>
+      )}
+    </div>
+  );
+}
+
 export function ContactSection() {
   const { t, language } = useLanguage();
   const allTeamLinks = teamMembers.flatMap((member) => member.social);
   const emailLink = allTeamLinks.find((link) => link.id === "email");
-  const email = emailAddress(emailLink?.href);
+  const email = site.email.trim();
+  const emailIcon =
+    studioSocial.find((link) => link.id === "email")?.icon ?? emailLink?.icon;
   const whatsappIcon = allTeamLinks.find((link) => link.id === "whatsapp")?.icon;
   const [copied, setCopied] = useState(false);
   const timer = useRef<number | null>(null);
@@ -94,14 +171,14 @@ export function ContactSection() {
             id: "email",
             label: t("contact.email"),
             href: `mailto:${email}`,
-            icon: emailLink?.icon,
+            icon: emailIcon,
             external: false,
             fallback: Mail,
           } satisfies Channel,
         ]
       : []),
     ...studioSocial
-      .filter((link) => isConfiguredHref(link.href))
+      .filter((link) => isConfiguredHref(link.href) && link.id !== "email")
       .map(
         (link) =>
           ({
@@ -253,21 +330,17 @@ export function ContactSection() {
                     {teamMembers.map((member) => (
                       <li
                         key={member.id}
-                        className="flex flex-wrap items-center gap-3 border-b border-[var(--color-void-border)] pb-4 last:border-b-0 last:pb-0"
+                        className="flex items-center gap-4 border-b border-[var(--color-void-border)] pb-4 last:border-b-0 last:pb-0"
                       >
-                        <TeamAvatar
-                          member={member}
-                          className="size-10 border-[var(--color-void-border)]"
-                        />
+                        <MemberOrbit member={member} />
                         <div className="min-w-0 flex-1">
                           <p className="truncate text-[12px] font-bold text-[var(--color-fg-inverse)]">
                             {member.name[language]}
                           </p>
-                          <p className="truncate text-[10px] text-[var(--color-fg-inverse-muted)]">
+                          <p className="mt-0.5 truncate text-[10px] text-[var(--color-fg-inverse-muted)]">
                             {member.role[language]}
                           </p>
                         </div>
-                        <SocialLinks links={member.social} tone="dark" />
                       </li>
                     ))}
                   </ul>

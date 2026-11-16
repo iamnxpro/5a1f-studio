@@ -1,5 +1,12 @@
 [
   {
+    "id": "email",
+    "label": { "ar": "البريد", "en": "Email" },
+    "href": "mailto:official5a1fstudios@gmail.com",
+    "icon": "media/images/gmail.webp",
+    "type": "custom"
+  },
+  {
     "id": "discord",
     "label": { "ar": "ديسكورد", "en": "Discord" },
     "href": "",

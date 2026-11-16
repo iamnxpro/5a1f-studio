@@ -10,9 +10,9 @@ from a remote host at runtime.
 |---|---|
 | `content/media/logo.svg` | Traced 5A1F wordmark used by the navbar, preloader, hero, and contact orbit. Favicons, PWA icons, and the OG image were generated from it. |
 | `content/media/logo.png` | Optional raster fallback; the live site uses the SVG. |
-| `content/media/team/amin.png` | Amin's avatar (square, transparent, stylized/illustrated; never a real face photo). |
-| `content/media/team/abdullah.png` | Abdullah's avatar, same rules. |
-| `content/media/team/kareem.png` | Kareem's avatar, same rules. |
+| `content/media/team/amin.svg` | Amin's vector avatar (square, stylized/illustrated; never a real face photo). |
+| `content/media/team/abdullah.svg` | Abdullah's vector avatar, same rules. |
+| `content/media/team/kareem.svg` | Kareem's vector avatar, same rules. |
 
 If an avatar is missing, the UI renders the member's initials. Nothing breaks.
 If the SVG logo is unavailable, `StudioLogo` falls back to the built-in `5A1F`

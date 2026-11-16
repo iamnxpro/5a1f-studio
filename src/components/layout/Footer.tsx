@@ -2,18 +2,16 @@ import { ArrowUpRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { StudioLogo } from "@/components/ui/StudioLogo";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { mediaUrl, site, studioSocial, teamMembers } from "@/lib/contentLoader";
+import { mediaUrl, site, studioSocial } from "@/lib/contentLoader";
 import { FOOTER_NAV } from "@/lib/navigation";
-import { emailAddress } from "@/lib/presentation";
 
 export function Footer() {
   const { t, language } = useLanguage();
   const year = new Date().getFullYear();
-  const channels = studioSocial.filter((link) => link.href.trim().length > 0);
-  const emailLink = teamMembers
-    .flatMap((member) => member.social)
-    .find((link) => link.id === "email");
-  const email = emailAddress(emailLink?.href);
+  const channels = studioSocial.filter(
+    (link) => link.href.trim().length > 0 && link.id !== "email",
+  );
+  const email = site.email.trim();
 
   return (
     <footer className="border-t border-[var(--color-border)] bg-[var(--color-bg-sunken)] text-[var(--color-fg-primary)]">

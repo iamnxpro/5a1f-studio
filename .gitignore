@@ -8,3 +8,9 @@ dist/
 *.log
 .DS_Store
 Thumbs.db
+
+# Original raster team art, vectorized into content/media/team/*.svg
+design/team-source/
+
+.vercel
+.env*

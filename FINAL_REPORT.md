@@ -598,3 +598,39 @@ links were added.
 **Performance target:** met (production Mobile 97, local preview 93)
 **Deployment:** Vercel production alias live; deep links, assets, headers, language persistence, 404 noindex, and route metadata verified
 **Blocking issues:** none for launch; pending studio-supplied content only
+
+---
+
+## 14. Finalization update (2026-11-16)
+
+### Typography (self-hosted, zero external requests)
+- Installed and bundled `@fontsource/amiri` (Arabic editorial serif) and
+  `@fontsource/ibm-plex-sans-arabic` (Arabic UI/body) alongside existing
+  self-hosted Latin families.
+- Updated `src/main.tsx`, `src/styles/fonts.css`, `src/styles/tokens.css`,
+  `src/hooks/usePreloadProgress.ts`, and `src/assets/fonts/README.md`.
+- Arabic body/headings resolve to `IBM Plex Sans Arabic` / `Amiri` (verified in
+  local preview); no font CDN or external font request is used.
+
+### Team avatars (vectorized SVG)
+- Vectorized provided team images into clean SVG avatars:
+  `content/media/team/amin.svg`, `content/media/team/abdullah.svg`,
+  `content/media/team/kareem.svg` (source raster images moved out of `content/`
+  to `design/team-source/`, gitignored).
+- Updated `content/team/members.json` avatar references and `content/media/README.md`.
+
+### Verification
+- `npm run check-content`: **0 errors, 6 warnings, 0 notes**.
+- `npm run build`: **success** (0 errors).
+
+### Deploy / auto-deploy
+- Changes committed and pushed to `iamnxpro/5a1f-studio` `main`.
+- Production deployed via Vercel CLI (`vercel deploy --prod --project 5a1f --yes`).
+- Native GitHub→Vercel auto-deploy is **not yet connected**: `vercel git connect`
+  / Vercel API reports `400` — “To link a GitHub repository, you need to install
+  the GitHub integration first.” Install/authorize the Vercel GitHub App and
+  grant repo access: https://github.com/apps/vercel, then run:
+  `vercel git connect https://github.com/iamnxpro/5a1f-studio.git --project 5a1f --yes`
+  (requires Vercel GitHub App installation for the account/repo; `gh` CLI not
+  authenticated in this environment). Once connected, pushes to `main` will
+  auto-deploy.

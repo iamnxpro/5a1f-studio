@@ -211,7 +211,8 @@ ol {
   }
 
   .orbit-spin,
-  .orbit-spin-reverse {
+  .orbit-spin-reverse,
+  .orbit-counter {
     animation: none !important;
   }
 
@@ -340,9 +341,20 @@ section[id] {
   will-change: transform;
 }
 
-/* Hovering the contact board pauses its decorative orbits immediately. */
-.group:hover .orbit-spin,
-.group:hover .orbit-spin-reverse {
+/* Keeps orbiting social icons upright while the ring turns. */
+.orbit-counter {
+  animation: orbit-spin 38s linear infinite reverse;
+  transform-origin: center;
+  will-change: transform;
+}
+
+/* A focused or hovered member freezes the whole orbit so links stay reachable. */
+.member-orbit:hover .orbit-spin,
+.member-orbit:hover .orbit-spin-reverse,
+.member-orbit:hover .orbit-counter,
+.member-orbit:focus-within .orbit-spin,
+.member-orbit:focus-within .orbit-spin-reverse,
+.member-orbit:focus-within .orbit-counter {
   animation-play-state: paused;
 }
 

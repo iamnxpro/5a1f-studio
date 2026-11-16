@@ -1,35 +1,15 @@
-# Arabic fonts (drop-in folder)
+# Arabic fonts (bundled)
 
-The Arabic typeface is intentionally **not** bundled yet — the studio owner will
-add it. Until then the site falls back to a local/system Arabic stack with zero
-network requests.
+The site now ships two open-source Arabic families from npm through
+`src/main.tsx`:
 
-## Required files
+- **Amiri** (`@fontsource/amiri`) — editorial Arabic serif for `.font-heading`.
+- **IBM Plex Sans Arabic** (`@fontsource/ibm-plex-sans-arabic`) — Arabic UI/body.
 
-Place the Arabic `.woff2` files here with these exact names:
+Vite copies the WOFF2/WOFF files into `dist/assets/` at build time. No font CDN
+or runtime network request is used.
 
-```
-src/assets/fonts/cairo-400.woff2
-src/assets/fonts/cairo-600.woff2
-src/assets/fonts/cairo-700.woff2
-src/assets/fonts/cairo-800.woff2
-```
-
-If you prefer **Tajawal**, use:
-
-```
-src/assets/fonts/tajawal-400.woff2
-src/assets/fonts/tajawal-700.woff2
-```
-
-## Activate
-
-1. Drop the files in this folder.
-2. Open `src/styles/fonts.css`.
-3. Uncomment the `@font-face` block and keep the `font-family: "Cairo";` name.
-4. Restart `npm run dev` (or rebuild).
-
-Arabic text is then rendered with Cairo first, falling back to system fonts.
-
-> Latin text is already self-hosted from npm: **Inter** (UI), **DM Serif Display**
-> (editorial headings) and **Orbitron** (numerals / wordmark). No font CDN is used.
+This folder is kept only for optional future local font drops. To replace a
+family without npm, add the files here, declare `@font-face` in
+`src/styles/fonts.css`, and update the `--font-arabic-sans` /
+`--font-arabic-serif` tokens.

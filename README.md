@@ -57,7 +57,7 @@ because it is the entry point. The Vercel rewrite sends unknown paths to
 ```text
 5a1f-studio/
   content/                     All editable content and media
-    site.json                  Site identity, URL, WhatsApp, feature flags
+    site.json                  Site identity, email, URL, WhatsApp, feature flags
     translations/              ar.json + en.json (175 matching keys)
     team/members.json          Team profiles, skills, social links
     games/games.json           Game catalogue
@@ -86,7 +86,7 @@ Rules of thumb:
 - Editable copy and metadata live in `content/`, not in JSX.
 - Structural navigation lives in `src/lib/navigation.ts`.
 - Components should read content through the typed content loader.
-- English fonts are self-hosted through `@fontsource`; no font or script CDN is used.
+- English and Arabic fonts are self-hosted through `@fontsource` (Inter, DM Serif Display, Orbitron, Amiri, IBM Plex Sans Arabic); no font or script CDN is used.
 
 ---
 
@@ -139,7 +139,7 @@ reload the page.
   "role": { "ar": "...", "en": "Co-Founder, Software & Game Developer" },
   "bio": { "ar": "...", "en": "..." },
   "skills": ["Godot 4", "TypeScript"],
-  "avatar": "media/team/amin.png",
+  "avatar": "media/team/amin.svg",
   "avatarAlt": { "ar": "...", "en": "Amin's avatar" },
   "social": [
     {
@@ -214,19 +214,19 @@ were generated from the same mark.
 Team avatars are expected at:
 
 ```text
-content/media/team/amin.png
-content/media/team/abdullah.png
-content/media/team/kareem.png
+content/media/team/amin.svg
+content/media/team/abdullah.svg
+content/media/team/kareem.svg
 ```
 
 Use square, transparent, stylized or illustrated avatars - never a real face
 photo. Keep individual files under 1 MB.
 
-Arabic fonts are intentionally not bundled yet. The site currently uses the
-system Arabic stack, which keeps the zero-network-request guarantee. When the
-files are available, place `cairo-400.woff2`, `cairo-600.woff2`,
-`cairo-700.woff2`, and `cairo-800.woff2` in `src/assets/fonts/`, then uncomment
-and adjust the `@font-face` block in `src/styles/fonts.css`.
+Arabic typography is self-hosted from npm: **Amiri** (editorial serif headings) and
+**IBM Plex Sans Arabic** (UI/body), imported in `src/main.tsx` and mapped via
+`src/styles/tokens.css` and `src/styles/fonts.css`. No Arabic font CDN is used.
+To replace the pairing, swap the `@fontsource` imports/tokens and rebuild. See
+`src/assets/fonts/README.md`.
 
 ---
 
@@ -337,13 +337,19 @@ npx vercel --prod   # production deployment
 Use project name **`5a1f`**. The production alias is
 **https://5a1f.vercel.app**.
 
-### Option B - Git integration
+### Option B - Git integration (auto-deploy)
 
 1. Push this folder to `iamnxpro/5a1f-studio`.
-2. Import the repository in Vercel.
-3. Framework preset: **Vite**.
-4. Build command: `npm run build`.
-5. Output directory: `dist`.
+2. Import/connect the repository in Vercel.
+3. Framework preset: **Vite**. Build: `npm run build`. Output: `dist`.
+4. Install/authorize the **Vercel GitHub App** and grant access to
+   `iamnxpro/5a1f-studio`: https://github.com/apps/vercel
+5. Connect the project:  
+   `vercel git connect https://github.com/iamnxpro/5a1f-studio.git --project 5a1f --yes`
+
+Once the GitHub App is installed and the repo is connected, pushes to `main`
+redeploy automatically. (CLI deploys work now; native Git auto-deploy requires
+the GitHub App installation/authorization for this repo.)
 6. Deploy and assign the `5a1f.vercel.app` domain.
 
 Because the site is entirely static, no environment variables are required.
@@ -366,8 +372,7 @@ Because the site is entirely static, no environment variables are required.
 
 These are intentionally not fabricated:
 
-- **Arabic fonts**: waiting for the studio's `.woff2` files.
-- **Team avatars**: `amin.png`, `abdullah.png`, `kareem.png`.
+- **Team avatars**: replace `content/media/team/amin.svg`, `abdullah.svg`, `kareem.svg` if different artwork is preferred (current files are vectorized from provided team images).
 - **Games**: two placeholder entries; replace titles, descriptions, genres,
   covers, links, and statuses.
 - **Software**: one placeholder entry; replace copy, specs, platforms, and links.

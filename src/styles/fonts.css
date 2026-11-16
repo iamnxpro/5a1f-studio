@@ -1,62 +1,38 @@
 /*
- * Arabic typography drop-in.
+ * Arabic typography
  * -----------------------------------------------------------------------------
- * The studio owner will supply the Arabic font files later. Until then the site
- * uses a locally installed / system Arabic stack (zero network requests).
+ * Both families are bundled from npm by `src/main.tsx` and emitted by Vite as
+ * local WOFF2/WOFF assets. The site never requests a font CDN at runtime.
  *
- * To activate a custom Arabic font:
- *   1. Put the .woff2 files in  src/assets/fonts/
- *   2. Uncomment + edit the @font-face block below
- *   3. Update --font-arabic-sans / --font-arabic-serif in tokens.css if needed
+ *   Amiri                  editorial Arabic serif (headings / display accents)
+ *   IBM Plex Sans Arabic   Arabic UI + body sans
  *
- * Expected file names (see src/assets/fonts/README.md):
- *   cairo-400.woff2, cairo-600.woff2, cairo-700.woff2, cairo-800.woff2
- * -----------------------------------------------------------------------------
+ * The `@fontsource` CSS files provide the actual @font-face declarations.
+ * Update `--font-arabic-serif` / `--font-arabic-sans` in tokens.css only when
+ * changing the pairing.
  */
-
-/*
-@font-face {
-  font-family: "Cairo";
-  src: url("../assets/fonts/cairo-400.woff2") format("woff2");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Cairo";
-  src: url("../assets/fonts/cairo-600.woff2") format("woff2");
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Cairo";
-  src: url("../assets/fonts/cairo-700.woff2") format("woff2");
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Cairo";
-  src: url("../assets/fonts/cairo-800.woff2") format("woff2");
-  font-weight: 800;
-  font-style: normal;
-  font-display: swap;
-}
-*/
 
 html[lang="ar"] {
   font-family: var(--font-arabic-sans);
 }
 
+/* body sets --font-sans explicitly in global.css, so re-apply the Arabic stack. */
+html[lang="ar"] body {
+  font-family: var(--font-arabic-sans);
+}
+
 html[lang="ar"] .font-heading {
   font-family: var(--font-arabic-serif);
+  letter-spacing: 0;
 }
 
 html[lang="ar"] .font-display {
   font-family: var(--font-arabic-sans);
   letter-spacing: 0;
+}
+
+/* Latin words inside Arabic headings keep their editorial Latin serif. */
+html[lang="ar"] .font-heading :lang(en),
+html[lang="ar"] .font-heading [lang="en"] {
+  font-family: var(--font-serif-en);
 }

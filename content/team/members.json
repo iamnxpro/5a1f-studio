@@ -5,7 +5,7 @@
     "role": { "ar": "مؤسس ومطوّر برمجيات وألعاب", "en": "Co-Founder, Software & Game Developer" },
     "bio": { "ar": "PLACEHOLDER", "en": "PLACEHOLDER" },
     "skills": ["Godot 4.7", "GDScript", "React", "TypeScript", "PLACEHOLDER"],
-    "avatar": "media/team/amin.png",
+    "avatar": "media/team/amin.svg",
     "avatarAlt": { "ar": "صورة رمزية لأمين", "en": "Amin's avatar" },
     "social": [
       { "id": "whatsapp", "label": { "ar": "واتساب", "en": "WhatsApp" }, "href": "https://wa.me/212754427433", "icon": "media/images/whatsapp.webp", "type": "custom" },
@@ -13,16 +13,16 @@
       { "id": "facebook", "label": { "ar": "فيسبوك", "en": "Facebook" }, "href": "https://web.facebook.com/iamnxpro", "icon": "media/images/facebook.svg", "type": "custom" },
       { "id": "github", "label": { "ar": "جيتهاب", "en": "GitHub" }, "href": "https://github.com/iamnxpro", "icon": "media/images/github.webp", "type": "custom" },
       { "id": "discord", "label": { "ar": "ديسكورد", "en": "Discord" }, "href": "https://discord.com/users/1218123666361942127", "icon": "media/images/discord.png", "type": "custom" },
-      { "id": "email", "label": { "ar": "البريد", "en": "Email" }, "href": "mailto:iamnx.amin.pro@gmail.com", "icon": "media/images/gmail.webp", "type": "custom" }
+      { "id": "email", "label": { "ar": "البريد", "en": "Email" }, "href": "mailto:official5a1fstudios@gmail.com", "icon": "media/images/gmail.webp", "type": "custom" }
     ]
   },
   {
     "id": "abdullah",
     "name": { "ar": "عبد الله", "en": "Abdullah" },
     "role": { "ar": "مؤسس ومصمم ثلاثي الأبعاد", "en": "Co-Founder & 3D Artist" },
-    "bio": { "ar": "PLACEHOLDER", "en": "PLACEHOLDER" },
+    "bio": { "ar": "اسمه الحقيقي عبد الصمد، لكن أمين يفضل مناداته بعبد الله.", "en": "His real name is Abdulsamad, though Amin prefers calling him Abdullah." },
     "skills": ["3D Modeling", "Game Art", "Level Design", "PLACEHOLDER"],
-    "avatar": "media/team/abdullah.png",
+    "avatar": "media/team/abdullah.svg",
     "avatarAlt": { "ar": "صورة رمزية لعبد الله", "en": "Abdullah's avatar" },
     "social": [
       { "id": "instagram", "label": { "ar": "إنستغرام", "en": "Instagram" }, "href": "https://www.instagram.com/abdulsamadabdo7072023/", "icon": "media/images/instagram.webp", "type": "custom" },
@@ -32,10 +32,10 @@
   {
     "id": "kareem",
     "name": { "ar": "كريم", "en": "Kareem" },
-    "role": { "ar": "عضو الفريق", "en": "Team Member" },
+    "role": { "ar": "مصمم ثنائي الأبعاد", "en": "2D Designer" },
     "bio": { "ar": "PLACEHOLDER", "en": "PLACEHOLDER" },
     "skills": ["PLACEHOLDER"],
-    "avatar": "media/team/kareem.png",
+    "avatar": "media/team/kareem.svg",
     "avatarAlt": { "ar": "صورة رمزية لكريم", "en": "Kareem's avatar" },
     "social": [
       { "id": "instagram", "label": { "ar": "إنستغرام", "en": "Instagram" }, "href": "https://www.instagram.com/9rlr0/", "icon": "media/images/instagram.webp", "type": "custom" },

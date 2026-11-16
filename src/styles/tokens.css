@@ -91,10 +91,10 @@
   --font-sans: "Inter Variable", "Inter", "Segoe UI", system-ui, -apple-system,
     "Helvetica Neue", Arial, sans-serif;
   --font-serif-en: "DM Serif Display", Georgia, "Times New Roman", serif;
-  --font-arabic-sans: "Cairo", "Tajawal", "Noto Naskh Arabic", "Segoe UI",
-    Tahoma, Arial, sans-serif;
-  --font-arabic-serif: "Cairo", "Tajawal", "Noto Naskh Arabic",
-    "Noto Serif Arabic", "Segoe UI", Tahoma, serif;
+  --font-arabic-sans: "IBM Plex Sans Arabic", "Inter Variable", "Inter",
+    "Tajawal", "Noto Naskh Arabic", "Segoe UI", Tahoma, Arial, sans-serif;
+  --font-arabic-serif: "Amiri", "DM Serif Display", "Noto Naskh Arabic",
+    "Times New Roman", serif;
   --font-display: "Orbitron", "Inter", "Segoe UI", sans-serif;
 
   --text-2xs: 0.625rem; /* 10px — rail meta, overlines */

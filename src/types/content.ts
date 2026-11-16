@@ -27,6 +27,7 @@ export type SiteConfig = {
   studioName: string;
   studioFullName: Localized;
   whatsappNumber: string;
+  email: string;
   url: string;
   ogImage: string;
   logo: string;

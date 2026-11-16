@@ -48,6 +48,8 @@ export function usePreloadProgress(): PreloadState {
       loadFont('400 16px "Inter Variable"'),
       loadFont('700 16px "Orbitron"'),
       loadFont('400 16px "DM Serif Display"'),
+      loadFont('400 16px "IBM Plex Sans Arabic"'),
+      loadFont('700 16px "Amiri"'),
       document.fonts ? document.fonts.ready.then(() => undefined) : Promise.resolve(),
     ];
 
