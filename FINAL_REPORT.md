@@ -634,3 +634,45 @@ links were added.
   (requires Vercel GitHub App installation for the account/repo; `gh` CLI not
   authenticated in this environment). Once connected, pushes to `main` will
   auto-deploy.
+
+---
+
+## 15. Team metadata update (2026-11-17)
+
+### Content
+- Added bilingual `country` to all member profiles and displayed it on team
+  cards, member profile pages, and the home contact orbit:
+  Amin — Morocco; Abdul Samad — Palestine; Kareem — Jordan; Emad — Sudan.
+- Added Amin's kunya (`أبو عثمان` / `Abu Othman`), shown as “Also known as” on
+  profile cards and pages.
+- Changed the second founder's display name to `عبد الصمد` / `Abdul Samad` and
+  kept the profile id as `abdulsamad`; `/team/abdullah` now redirects to
+  `/team/abdulsamad`.
+- Replaced Amin's placeholder skill with `2D Design` and `3D Design`, and
+  reordered skills so both are visible on compact cards.
+- Added Emad as a new member (`Programmer` / `مبرمج`) with `Programming` skill.
+  Avatar and social links intentionally remain empty until the owner supplies
+  his picture and links file; the initials fallback is shown meanwhile.
+- Updated Arabic/English About copy, sitemap entries, content checker
+  validation, and READMEs.
+
+### Verification
+- `npm run check-content`: **0 errors, 6 warnings, 0 notes** (177 translation
+  keys matched).
+- `npm run build`: **success** (0 errors; chunk-size advisory only).
+- Remote browser QA on production: Arabic/English country labels, kunya,
+  Abdul Samad rename, Emad profile, and old-URL redirect all pass. No console
+  errors, 4xx responses, or external asset hosts.
+
+### Deploy
+- Commit: `2e80074 feat: localize team countries, kunya, and Emad profile`
+  (pushed to `origin/main`).
+- Vercel production deployment: `dpl_DWM6fo1pC5HKfaUPMNGf2mt1x5JS` (READY).
+- Alias: https://5a1f.vercel.app
+
+### Still pending from the studio owner
+1. Emad's profile picture, to vectorize into `content/media/team/emad.svg`.
+2. The links `.txt` file, to populate Emad's `social` array.
+
+Native GitHub→Vercel auto-deploy remains blocked by the same missing GitHub
+integration authorization described in section 14.
