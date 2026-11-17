@@ -2,9 +2,11 @@
   {
     "id": "amin",
     "name": { "ar": "أمين", "en": "Amin" },
+    "kunya": { "ar": "أبو عثمان", "en": "Abu Othman" },
+    "country": { "ar": "المغرب", "en": "Morocco" },
     "role": { "ar": "مؤسس ومطوّر برمجيات وألعاب", "en": "Co-Founder, Software & Game Developer" },
     "bio": { "ar": "PLACEHOLDER", "en": "PLACEHOLDER" },
-    "skills": ["Godot 4.7", "GDScript", "React", "TypeScript", "PLACEHOLDER"],
+    "skills": ["2D Design", "3D Design", "Godot 4.7", "GDScript", "React", "TypeScript"],
     "avatar": "media/team/amin.svg",
     "avatarAlt": { "ar": "صورة رمزية لأمين", "en": "Amin's avatar" },
     "social": [
@@ -17,13 +19,14 @@
     ]
   },
   {
-    "id": "abdullah",
-    "name": { "ar": "عبد الله", "en": "Abdullah" },
+    "id": "abdulsamad",
+    "name": { "ar": "عبد الصمد", "en": "Abdul Samad" },
+    "country": { "ar": "فلسطين", "en": "Palestine" },
     "role": { "ar": "مؤسس ومصمم ثلاثي الأبعاد", "en": "Co-Founder & 3D Artist" },
-    "bio": { "ar": "اسمه الحقيقي عبد الصمد، لكن أمين يفضل مناداته بعبد الله.", "en": "His real name is Abdulsamad, though Amin prefers calling him Abdullah." },
+    "bio": { "ar": "PLACEHOLDER", "en": "PLACEHOLDER" },
     "skills": ["3D Modeling", "Game Art", "Level Design", "PLACEHOLDER"],
     "avatar": "media/team/abdullah.svg",
-    "avatarAlt": { "ar": "صورة رمزية لعبد الله", "en": "Abdullah's avatar" },
+    "avatarAlt": { "ar": "صورة رمزية لعبد الصمد", "en": "Abdul Samad's avatar" },
     "social": [
       { "id": "instagram", "label": { "ar": "إنستغرام", "en": "Instagram" }, "href": "https://www.instagram.com/abdulsamadabdo7072023/", "icon": "media/images/instagram.webp", "type": "custom" },
       { "id": "discord", "label": { "ar": "ديسكورد", "en": "Discord" }, "href": "https://discord.com/users/1307685979250753559", "icon": "media/images/discord.png", "type": "custom" }
@@ -32,6 +35,7 @@
   {
     "id": "kareem",
     "name": { "ar": "كريم", "en": "Kareem" },
+    "country": { "ar": "الأردن", "en": "Jordan" },
     "role": { "ar": "مصمم ثنائي الأبعاد", "en": "2D Designer" },
     "bio": { "ar": "PLACEHOLDER", "en": "PLACEHOLDER" },
     "skills": ["PLACEHOLDER"],
@@ -42,5 +46,16 @@
       { "id": "discord", "label": { "ar": "ديسكورد", "en": "Discord" }, "href": "https://discord.com/users/1522798509785612305", "icon": "media/images/discord.png", "type": "custom" },
       { "id": "youtube", "label": { "ar": "يوتيوب", "en": "YouTube" }, "href": "https://www.youtube.com/@KAREEM_KM-K", "icon": "media/images/youtube.svg", "type": "custom" }
     ]
+  },
+  {
+    "id": "emad",
+    "name": { "ar": "عماد", "en": "Emad" },
+    "country": { "ar": "السودان", "en": "Sudan" },
+    "role": { "ar": "مبرمج", "en": "Programmer" },
+    "bio": { "ar": "PLACEHOLDER", "en": "PLACEHOLDER" },
+    "skills": ["Programming"],
+    "avatar": "",
+    "avatarAlt": { "ar": "صورة رمزية لعماد", "en": "Emad's avatar" },
+    "social": []
   }
 ]

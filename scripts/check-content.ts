@@ -151,6 +151,12 @@ if (team) {
     const id = String(member.id ?? `#${index}`);
     if (!member.id) fail(`members.json[${index}]: id مطلوب.`);
     checkLocalized(member.name, `members.json[${id}].name`);
+    if (member.kunya !== undefined) {
+      checkLocalized(member.kunya, `members.json[${id}].kunya`);
+    }
+    if (member.country !== undefined) {
+      checkLocalized(member.country, `members.json[${id}].country`);
+    }
     checkLocalized(member.role, `members.json[${id}].role`);
     checkLocalized(member.bio, `members.json[${id}].bio`);
     checkLocalized(member.avatarAlt, `members.json[${id}].avatarAlt`);

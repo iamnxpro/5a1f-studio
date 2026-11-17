@@ -13,6 +13,7 @@ from a remote host at runtime.
 | `content/media/team/amin.svg` | Amin's vector avatar (square, stylized/illustrated; never a real face photo). |
 | `content/media/team/abdullah.svg` | Abdullah's vector avatar, same rules. |
 | `content/media/team/kareem.svg` | Kareem's vector avatar, same rules. |
+| `content/media/team/emad.svg` | Pending Emad's profile picture; until then his initials are shown. |
 
 If an avatar is missing, the UI renders the member's initials. Nothing breaks.
 If the SVG logo is unavailable, `StudioLogo` falls back to the built-in `5A1F`

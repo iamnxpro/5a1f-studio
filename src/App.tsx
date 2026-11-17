@@ -1,5 +1,5 @@
 import { lazy, Suspense, useEffect, useState, type ReactNode } from "react";
-import { Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 import { Layout } from "@/components/layout/Layout";
 import { Preloader } from "@/components/preloader/Preloader";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -78,6 +78,10 @@ export default function App() {
                   <Team />
                 </LazyPage>
               }
+            />
+            <Route
+              path="/team/abdullah"
+              element={<Navigate to="/team/abdulsamad" replace />}
             />
             <Route
               path="/team/:memberId"

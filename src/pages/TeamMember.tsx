@@ -1,4 +1,4 @@
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, MapPin } from "lucide-react";
 import { Link, useParams } from "react-router-dom";
 import { SocialLinks } from "@/components/ui/SocialLinks";
 import { TeamAvatar } from "@/components/ui/TeamAvatar";
@@ -78,6 +78,23 @@ export default function TeamMember() {
                 <p className="mt-2 max-w-md text-[13px] font-semibold leading-relaxed text-[var(--color-fg-secondary)]">
                   {member.role[language]}
                 </p>
+                {(member.kunya || member.country) && (
+                  <div className="mt-3 flex flex-wrap gap-x-4 gap-y-1 text-[11px] font-semibold text-[var(--color-fg-muted)]">
+                    {member.kunya && (
+                      <span>
+                        <span className="sr-only">{t("team.kunya")}: </span>
+                        {member.kunya[language]}
+                      </span>
+                    )}
+                    {member.country && (
+                      <span className="inline-flex items-center gap-1.5">
+                        <MapPin size={12} aria-hidden="true" className="shrink-0" />
+                        <span className="sr-only">{t("team.country")}: </span>
+                        {member.country[language]}
+                      </span>
+                    )}
+                  </div>
+                )}
               </div>
             </div>
 

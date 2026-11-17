@@ -1,4 +1,4 @@
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, MapPin } from "lucide-react";
 import { Link } from "react-router-dom";
 import { TeamAvatar } from "@/components/ui/TeamAvatar";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -47,9 +47,22 @@ export function MemberCard({ member, variant = "compact", className }: MemberCar
       <h3 className="font-heading mt-5 text-[length:var(--text-xl)] text-[var(--color-fg-primary)]">
         {member.name[language]}
       </h3>
+      {full && member.kunya && (
+        <p className="mt-0.5 text-[11px] font-semibold text-[var(--color-fg-muted)]">
+          <span className="sr-only">{t("team.kunya")}: </span>
+          {member.kunya[language]}
+        </p>
+      )}
       <p className="mt-1 text-[12px] font-semibold leading-snug text-[var(--color-fg-secondary)]">
         {member.role[language]}
       </p>
+      {member.country && (
+        <p className="mt-2 inline-flex items-center gap-1.5 text-[10px] font-semibold text-[var(--color-fg-muted)]">
+          <MapPin size={11} aria-hidden="true" className="shrink-0" />
+          <span className="sr-only">{t("team.country")}: </span>
+          {member.country[language]}
+        </p>
+      )}
 
       {skills.length > 0 && (
         <ul className="mt-4 flex flex-wrap gap-1.5">

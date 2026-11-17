@@ -340,6 +340,12 @@ export function ContactSection() {
                           <p className="mt-0.5 truncate text-[10px] text-[var(--color-fg-inverse-muted)]">
                             {member.role[language]}
                           </p>
+                          {member.country && (
+                            <p className="mt-0.5 truncate text-[10px] text-[var(--color-fg-inverse-muted)]">
+                              <span className="sr-only">{t("team.country")}: </span>
+                              {member.country[language]}
+                            </p>
+                          )}
                         </div>
                       </li>
                     ))}

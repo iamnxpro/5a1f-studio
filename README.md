@@ -40,7 +40,7 @@ or third-party runtime service.
 | `/` | Home: hero, games, about, team preview, join form, contact |
 | `/software` | Software and tools |
 | `/team` | Team index |
-| `/team/:memberId` | Team member profile (`amin`, `abdullah`, `kareem`) |
+| `/team/:memberId` | Team member profile (`amin`, `abdulsamad`, `kareem`, `emad`); `/team/abdullah` redirects to `/team/abdulsamad` |
 | `/blog` | Blog index, including the empty state when there are no posts |
 | `/blog/:slug` | Lazy-loaded Markdown article |
 | `/privacy` | Privacy and data-handling statement |
@@ -215,8 +215,9 @@ Team avatars are expected at:
 
 ```text
 content/media/team/amin.svg
-content/media/team/abdullah.svg
+content/media/team/abdullah.svg   (file name kept; profile id is `abdulsamad`)
 content/media/team/kareem.svg
+content/media/team/emad.svg       (pending profile picture)
 ```
 
 Use square, transparent, stylized or illustrated avatars - never a real face

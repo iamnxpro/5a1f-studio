@@ -44,6 +44,8 @@ export type SiteConfig = {
 export type TeamMember = {
   id: string;
   name: Localized;
+  kunya?: Localized;
+  country?: Localized;
   role: Localized;
   bio: Localized;
   skills: string[];
