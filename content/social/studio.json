@@ -9,42 +9,42 @@
   {
     "id": "github_org",
     "label": { "ar": "منظمة الاستوديو على جيتهاب", "en": "Studio GitHub Organization" },
-    "href": "",
+    "href": "https://github.com/official5a1fstudio",
     "icon": "media/images/github.webp",
     "type": "custom"
   },
   {
     "id": "discord_server",
     "label": { "ar": "سيرفر ديسكورد الرسمي", "en": "Official Discord Server" },
-    "href": "",
+    "href": "https://discord.gg/AGKpuRb5",
     "icon": "media/images/discord.png",
     "type": "custom"
   },
   {
     "id": "whatsapp_channel",
     "label": { "ar": "قناة واتساب الرسمية", "en": "Official WhatsApp Channel" },
-    "href": "",
+    "href": "https://whatsapp.com/channel/0029Vb98zMkFSAtACEG6IX0T",
     "icon": "media/images/whatsapp.webp",
     "type": "custom"
   },
   {
     "id": "paypal",
     "label": { "ar": "حساب باي بال", "en": "Studio PayPal" },
-    "href": "",
+    "href": "https://paypal.me/5a1fstudio",
     "icon": "media/images/paypal.svg",
     "type": "custom"
   },
   {
     "id": "kofi",
     "label": { "ar": "صفحة كو-فاي للتبرع", "en": "Studio Ko-fi" },
-    "href": "",
+    "href": "https://ko-fi.com/5a1fstudio",
     "icon": "media/images/kofi.svg",
     "type": "custom"
   },
   {
     "id": "itchio",
     "label": { "ar": "منصة آيتش.آي.أو", "en": "Itch.io" },
-    "href": "",
+    "href": "https://official5a1fstudio.itch.io/",
     "icon": "media/images/itchio.svg",
     "type": "custom"
   }

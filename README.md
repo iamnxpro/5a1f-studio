@@ -42,7 +42,7 @@ or third-party runtime service.
 | `/productions` | Artistic & media productions, led by Abdul Samad |
 | `/services` | Service request / hire-us form with WhatsApp and email handoff |
 | `/team` | Team index |
-| `/team/:memberId` | Team member profile (`amin`, `abdulsamad`, `emad`); the legacy `/team/abdullah` URL redirects to `/team/abdulsamad` |
+| `/team/:memberId` | Team member profile (`amin`, `abdulsamad`, `emad`, `hosin`); the legacy `/team/abdullah` URL redirects to `/team/abdulsamad` |
 | `/blog` | Blog index, including the empty state when there are no posts |
 | `/blog/:slug` | Lazy-loaded Markdown article |
 | `/privacy` | Privacy and data-handling statement |
@@ -172,13 +172,16 @@ reload the page.
 ```
 
 - Bios and skills containing `PLACEHOLDER` are hidden until real copy is supplied.
-- If an avatar is missing, the UI shows the member's initials rather than a broken image.
+- All four members have local SVG avatars. If an avatar is missing, the UI shows
+  the member's initials rather than a broken image.
 - Social links with an empty `href` are hidden; the checker warns instead of
-  failing. Abdul Samad has pending Epic Games and WhatsApp slots, and Emad has
-  a pending portfolio/links slot, ready for the owner's `.txt` file.
+  failing. Abdul Samad's Epic Games slot and Emad's portfolio slot remain
+  intentionally pending.
 - `iamnx.amin.pro@gmail.com` is Amin's personal email on his profile only. The
   studio's official address remains `official5a1fstudios@gmail.com`.
-- Do not add private phone numbers, addresses, schools, or other personal data.
+- Member WhatsApp links (`wa.me/<number>`) are intentional contact methods.
+  Any other private phone numbers, addresses, schools, or personal data remain
+  prohibited and are flagged by the checker.
 
 ### 4.4 Games, software and productions
 
@@ -249,11 +252,14 @@ Team avatars are expected at:
 ```text
 content/media/team/amin.svg
 content/media/team/abdulsamad.svg
-content/media/team/emad.svg       (pending profile picture)
+content/media/team/emad.svg
+content/media/team/hosin.svg
 ```
 
 Use square, transparent, stylized or illustrated avatars - never a real face
-photo. Keep individual files under 1 MB.
+photo. Emad's SVG was traced from the supplied raster source in the gitignored
+`design/team-source/` folder; Hosin's SVG is an original themed placeholder.
+Keep individual files under 1 MB.
 
 Arabic typography is self-hosted from npm: **Amiri** (editorial serif headings) and
 **IBM Plex Sans Arabic** (UI/body), imported in `src/main.tsx` and mapped via
@@ -343,9 +349,10 @@ npm run preview
 
 Expected content warnings while the real content is being prepared:
 
-- 5 studio social links with empty `href` (hidden in the UI);
-- 3 team avatars not yet supplied (initials fallback is used);
-- 30 `PLACEHOLDER` values across games, software, bios, and skills.
+- 2 member links with empty `href` (Abdul Samad's Epic Games slot and Emad's
+  portfolio slot, hidden in the UI);
+- 0 missing team avatars;
+- 47 `PLACEHOLDER` values across games, software, bios, and skills.
 
 The production build is currently clean apart from Vite's advisory that the
 main chunk exceeds 500 kB. It is not a build failure; the main bundle is about
@@ -390,9 +397,11 @@ Because the site is entirely static, no environment variables are required.
 ### Post-deploy checks
 
 - Open `/`, `/software`, `/productions`, `/services`, `/team`, `/team/amin`,
-  `/team/abdulsamad`, `/team/emad`, `/blog`, `/privacy`, and an unknown path to
-  confirm the rewrite and 404 behavior. `/team/abdullah` should redirect to
-  `/team/abdulsamad`.
+  `/team/abdulsamad`, `/team/emad`, `/team/hosin`, `/blog`, `/privacy`, and an
+  unknown path to confirm the rewrite and 404 behavior. `/team/abdullah` should
+  redirect to `/team/abdulsamad`.
+- Confirm the studio social links resolve to the configured GitHub Organization,
+  Discord, WhatsApp Channel, PayPal, Ko-fi, and Itch.io URLs.
 - Confirm `/robots.txt`, `/sitemap.xml`, `/site.webmanifest`, `/favicon.svg`,
   and `/og-image.png` return the expected files.
 - Confirm the security and cache headers from `vercel.json`.
@@ -408,19 +417,22 @@ Because the site is entirely static, no environment variables are required.
 
 These are intentionally not fabricated:
 
-- **Team avatars**: `amin.svg` and `abdulsamad.svg` are vectorized from the
-  supplied images; `emad.svg` is still pending.
+- **Team avatars**: all four are local SVGs. `amin.svg` and `abdulsamad.svg`
+  were traced from supplied images, `emad.svg` from the supplied JPEG, and
+  `hosin.svg` is a themed illustrated placeholder.
 - **Games**: two placeholder entries; replace titles, descriptions, genres,
   covers, links, and statuses.
 - **Software**: one placeholder entry; replace copy, specs, platforms, and links.
 - **Productions**: two placeholder entries; replace copy, formats, covers, links,
   and statuses. Abdul Samad is already credited as the section lead.
-- **Team bios/skills**: placeholder values are hidden until replaced.
-- **Member links**: Abdul Samad's Epic Games/WhatsApp and Emad's portfolio slots
-  have empty `href` values until the owner's `.txt` file arrives.
+- **Team bios/skills**: placeholder values are hidden until replaced. Hosin's
+  role is intentionally generic (`Team Member`) until a real role is supplied.
+- **Member links**: Abdul Samad's Epic Games slot and Emad's portfolio slot have
+  empty `href` values. Abdul Samad's WhatsApp, Emad's WhatsApp/Discord, and
+  Hosin's Instagram/Discord are configured.
 - **Studio social links**: GitHub Organization, Discord Server, WhatsApp
-  Channel, PayPal, Ko-fi, and Itch.io slots have empty `href` values; the
-  official email is already configured.
+  Channel, PayPal, Ko-fi, and Itch.io are configured; the official email remains
+  `official5a1fstudios@gmail.com`.
 - **Blog**: no published posts yet; the empty state is intentional.
 
 Until those are supplied, the site is fully deployable and does not display

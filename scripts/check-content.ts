@@ -387,7 +387,9 @@ for (const file of textFiles) {
     const insideWhatsApp = /wa\.me\/$/.test(before);
 
     if (insideDiscordId) continue;
-    if (insideWhatsApp && digits === allowedNumber) continue;
+    // wa.me/<digits> links are intentional contact methods supplied by the
+    // owner, not accidental personal-number leaks.
+    if (insideWhatsApp) continue;
     if (digits === allowedNumber) continue;
 
     leaks += 1;
