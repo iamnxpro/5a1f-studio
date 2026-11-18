@@ -39,8 +39,10 @@ or third-party runtime service.
 |---|---|
 | `/` | Home: hero, games, about, team preview, join form, contact |
 | `/software` | Software and tools |
+| `/productions` | Artistic & media productions, led by Abdul Samad |
+| `/services` | Service request / hire-us form with WhatsApp and email handoff |
 | `/team` | Team index |
-| `/team/:memberId` | Team member profile (`amin`, `abdulsamad`, `kareem`, `emad`); `/team/abdullah` redirects to `/team/abdulsamad` |
+| `/team/:memberId` | Team member profile (`amin`, `abdulsamad`, `emad`); the legacy `/team/abdullah` URL redirects to `/team/abdulsamad` |
 | `/blog` | Blog index, including the empty state when there are no posts |
 | `/blog/:slug` | Lazy-loaded Markdown article |
 | `/privacy` | Privacy and data-handling statement |
@@ -58,10 +60,11 @@ because it is the entry point. The Vercel rewrite sends unknown paths to
 5a1f-studio/
   content/                     All editable content and media
     site.json                  Site identity, email, URL, WhatsApp, feature flags
-    translations/              ar.json + en.json (175 matching keys)
+    translations/              ar.json + en.json (matching keys)
     team/members.json          Team profiles, skills, social links
     games/games.json           Game catalogue
     software/software.json     Software catalogue
+    productions/productions.json  Artistic & media productions catalogue
     social/studio.json         Studio-level social links
     blog/<slug>/               post.ar.md, post.en.md, optional cover
     media/                     Logo, team avatars, icons, images
@@ -108,6 +111,16 @@ Controls the studio identity and global switches:
   "features": { "competitions": false },
   "joinForm": {
     "ageMode": "exact",
+    "departments": [
+      { "id": "software", "label": { "ar": "برمجيات", "en": "Software" } },
+      { "id": "games", "label": { "ar": "ألعاب", "en": "Games" } }
+    ],
+    "aiUsageOptions": [
+      { "id": "essential", "label": { "ar": "أساسي في عملي", "en": "Essential in my work" } },
+      { "id": "most", "label": { "ar": "أغلب الأحيان", "en": "Most of the time" } },
+      { "id": "partial", "label": { "ar": "ليس بشكل كلي", "en": "Not completely" } },
+      { "id": "few", "label": { "ar": "فقط في مرات قليلة", "en": "Only a few times" } }
+    ],
     "roles": [
       { "id": "programmer", "label": { "ar": "...", "en": "Game Programmer" } }
     ]
@@ -119,7 +132,12 @@ Controls the studio identity and global switches:
   actual competition content; the UI is not filled with invented entries.
 - `joinForm.ageMode` is `exact` for a date-of-birth-style age field or `range`
   for an age bracket.
-- Keep `url` and `ogImage` in sync with the production domain.
+- `joinForm.departments` drives the Department dropdown (`Software` / `Games`).
+- `joinForm.aiUsageOptions` drives the four AI-usage answers; keep the wording
+  exactly as supplied.
+- Keep `url` and `ogImage` in sync with the production domain. The official
+  studio email lives here and in `content/social/studio.json`; Amin's personal
+  email lives only on his team profile.
 
 ### 4.2 Translations
 
@@ -155,13 +173,17 @@ reload the page.
 
 - Bios and skills containing `PLACEHOLDER` are hidden until real copy is supplied.
 - If an avatar is missing, the UI shows the member's initials rather than a broken image.
-- Social links with an empty `href` are hidden.
+- Social links with an empty `href` are hidden; the checker warns instead of
+  failing. Abdul Samad has pending Epic Games and WhatsApp slots, and Emad has
+  a pending portfolio/links slot, ready for the owner's `.txt` file.
+- `iamnx.amin.pro@gmail.com` is Amin's personal email on his profile only. The
+  studio's official address remains `official5a1fstudios@gmail.com`.
 - Do not add private phone numbers, addresses, schools, or other personal data.
 
-### 4.4 Games and software
+### 4.4 Games, software and productions
 
-`content/games/games.json` and `content/software/software.json` use the shared
-status values:
+`content/games/games.json`, `content/software/software.json`, and
+`content/productions/productions.json` use the shared status values:
 
 - `available`
 - `coming_soon`
@@ -171,10 +193,21 @@ status values:
 Game entries support bilingual `title`, `tagline`, `description`, `genres`,
 `status`, `cover`, `screenshots`, `links`, `featured`, and `year`. Software
 entries support bilingual `name`, `tagline`, `description`, `status`, `cover`,
-`platforms`, `specs`, and `links`. Image paths are relative to `content/` and
-resolved to bundled assets at build time.
+`platforms`, `specs`, and `links`. Production entries use the games-style
+layout with bilingual `title`, `tagline`, `description`, `formats`, `status`,
+`cover`, `year`, `links`, and `featured`; the page attributes the section to
+Abdul Samad. Image paths are relative to `content/` and resolved to bundled
+assets at build time.
 
-### 4.5 Blog
+### 4.5 Forms without a backend
+
+The Join form and `/services` form are fully client-side. Labels and placeholders
+come from `content/translations/*.json`; Submit opens a prefilled WhatsApp link
+or, for service requests, a `mailto:` draft addressed to the official studio
+email. Nothing is stored or sent by the site itself. The Join form includes the
+required pre-launch acknowledgment next to the Privacy Policy link.
+
+### 4.6 Blog
 
 Create one folder per article:
 
@@ -205,7 +238,7 @@ cover: "cover.webp"
 - The index currently has no posts, so it displays the designed empty state.
 - Keep personal data out of posts. The content checker scans Markdown for leaks.
 
-### 4.6 Media and fonts
+### 4.7 Media and fonts
 
 All images live under `content/media/`. The main asset is the traced
 `content/media/logo.svg`; the favicon set, PWA icons, and OG image in `public/`
@@ -215,8 +248,7 @@ Team avatars are expected at:
 
 ```text
 content/media/team/amin.svg
-content/media/team/abdullah.svg   (file name kept; profile id is `abdulsamad`)
-content/media/team/kareem.svg
+content/media/team/abdulsamad.svg
 content/media/team/emad.svg       (pending profile picture)
 ```
 
@@ -357,13 +389,16 @@ Because the site is entirely static, no environment variables are required.
 
 ### Post-deploy checks
 
-- Open `/`, `/software`, `/team`, `/team/amin`, `/blog`, `/privacy`, and an
-  unknown path to confirm the rewrite and 404 behavior.
+- Open `/`, `/software`, `/productions`, `/services`, `/team`, `/team/amin`,
+  `/team/abdulsamad`, `/team/emad`, `/blog`, `/privacy`, and an unknown path to
+  confirm the rewrite and 404 behavior. `/team/abdullah` should redirect to
+  `/team/abdulsamad`.
 - Confirm `/robots.txt`, `/sitemap.xml`, `/site.webmanifest`, `/favicon.svg`,
   and `/og-image.png` return the expected files.
 - Confirm the security and cache headers from `vercel.json`.
 - Confirm the language toggle, mobile menu, reduced-motion/Stop Motion behavior,
-  and the join form's WhatsApp handoff.
+  the Join form's required acknowledgment and WhatsApp handoff, and both
+  service-request handoffs (WhatsApp and `mailto:`).
 - Re-check the console for external requests; the site should only contact its
   own origin.
 
@@ -373,12 +408,19 @@ Because the site is entirely static, no environment variables are required.
 
 These are intentionally not fabricated:
 
-- **Team avatars**: replace `content/media/team/amin.svg`, `abdullah.svg`, `kareem.svg` if different artwork is preferred (current files are vectorized from provided team images).
+- **Team avatars**: `amin.svg` and `abdulsamad.svg` are vectorized from the
+  supplied images; `emad.svg` is still pending.
 - **Games**: two placeholder entries; replace titles, descriptions, genres,
   covers, links, and statuses.
 - **Software**: one placeholder entry; replace copy, specs, platforms, and links.
+- **Productions**: two placeholder entries; replace copy, formats, covers, links,
+  and statuses. Abdul Samad is already credited as the section lead.
 - **Team bios/skills**: placeholder values are hidden until replaced.
-- **Studio social links**: five entries currently have empty `href` values.
+- **Member links**: Abdul Samad's Epic Games/WhatsApp and Emad's portfolio slots
+  have empty `href` values until the owner's `.txt` file arrives.
+- **Studio social links**: GitHub Organization, Discord Server, WhatsApp
+  Channel, PayPal, Ko-fi, and Itch.io slots have empty `href` values; the
+  official email is already configured.
 - **Blog**: no published posts yet; the empty state is intentional.
 
 Until those are supplied, the site is fully deployable and does not display

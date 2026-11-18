@@ -8,6 +8,8 @@ import NotFound from "@/pages/NotFound";
 import Privacy from "@/pages/Privacy";
 
 const SoftwarePage = lazy(() => import("@/pages/Software"));
+const ProductionsPage = lazy(() => import("@/pages/Productions"));
+const ServiceRequestPage = lazy(() => import("@/pages/ServiceRequest"));
 const Team = lazy(() => import("@/pages/Team"));
 const TeamMember = lazy(() => import("@/pages/TeamMember"));
 const Blog = lazy(() => import("@/pages/Blog"));
@@ -68,6 +70,22 @@ export default function App() {
               element={
                 <LazyPage>
                   <SoftwarePage />
+                </LazyPage>
+              }
+            />
+            <Route
+              path="/productions"
+              element={
+                <LazyPage>
+                  <ProductionsPage />
+                </LazyPage>
+              }
+            />
+            <Route
+              path="/services"
+              element={
+                <LazyPage>
+                  <ServiceRequestPage />
                 </LazyPage>
               }
             />

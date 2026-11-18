@@ -15,6 +15,16 @@
   },
   "joinForm": {
     "ageMode": "exact",
+    "departments": [
+      { "id": "software", "label": { "ar": "برمجيات", "en": "Software" } },
+      { "id": "games", "label": { "ar": "ألعاب", "en": "Games" } }
+    ],
+    "aiUsageOptions": [
+      { "id": "essential", "label": { "ar": "أساسي في عملي", "en": "Essential in my work" } },
+      { "id": "most", "label": { "ar": "أغلب الأحيان", "en": "Most of the time" } },
+      { "id": "partial", "label": { "ar": "ليس بشكل كلي", "en": "Not completely" } },
+      { "id": "few", "label": { "ar": "فقط في مرات قليلة", "en": "Only a few times" } }
+    ],
     "roles": [
       { "id": "programmer", "label": { "ar": "مبرمج ألعاب", "en": "Game Programmer" } },
       { "id": "3d_artist", "label": { "ar": "مصمم ثلاثي الأبعاد", "en": "3D Artist" } },

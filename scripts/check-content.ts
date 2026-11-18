@@ -98,7 +98,12 @@ const site = readJson<{
   logo?: string;
   defaultLanguage?: string;
   features?: { competitions?: boolean };
-  joinForm?: { ageMode?: string; roles?: Array<{ id?: string; label?: Localized }> };
+  joinForm?: {
+    ageMode?: string;
+    departments?: Array<{ id?: string; label?: Localized }>;
+    aiUsageOptions?: Array<{ id?: string; label?: Localized }>;
+    roles?: Array<{ id?: string; label?: Localized }>;
+  };
 }>("site.json");
 
 if (site) {
@@ -115,6 +120,20 @@ if (site) {
   }
   if (site.joinForm?.ageMode !== "exact" && site.joinForm?.ageMode !== "range") {
     fail('site.json: joinForm.ageMode يجب أن تكون "exact" أو "range".');
+  }
+  const optionGroups: Array<[string, Array<{ id?: string; label?: Localized }> | undefined]> = [
+    ["departments", site.joinForm?.departments],
+    ["aiUsageOptions", site.joinForm?.aiUsageOptions],
+  ];
+  for (const [name, options] of optionGroups) {
+    if (!Array.isArray(options) || options.length === 0) {
+      fail(`site.json: joinForm.${String(name)} يجب أن تحتوي على خيار واحد على الأقل.`);
+      continue;
+    }
+    options.forEach((option, index) => {
+      if (!option?.id) fail(`site.json: joinForm.${String(name)}[${index}].id مطلوب.`);
+      checkLocalized(option?.label, `site.json: joinForm.${String(name)}[${index}].label`);
+    });
   }
   if (!Array.isArray(site.joinForm?.roles) || site.joinForm.roles.length === 0) {
     fail("site.json: joinForm.roles يجب أن تحتوي على تخصص واحد على الأقل.");
@@ -134,6 +153,7 @@ const translations = {
 const team = readJson<Array<Record<string, unknown>>>("team/members.json");
 const games = readJson<Array<Record<string, unknown>>>("games/games.json");
 const software = readJson<Array<Record<string, unknown>>>("software/software.json");
+const productions = readJson<Array<Record<string, unknown>>>("productions/productions.json");
 const studioSocial = readJson<Array<Record<string, unknown>>>("social/studio.json");
 
 const imageRefs: Array<{ ref: string; required: boolean; owner: string }> = [];
@@ -174,7 +194,13 @@ if (team) {
       const item = link as Record<string, unknown>;
       checkLocalized(item.label, `members.json[${id}].social[${linkIndex}].label`);
       addImage(item.icon, true, `members.json[${id}].social[${linkIndex}].icon`);
-      if (typeof item.href !== "string" || !/^(https?:\/\/|mailto:)/.test(item.href)) {
+      if (typeof item.href !== "string") {
+        fail(`members.json[${id}].social[${linkIndex}].href مطلوب (يمكن أن يكون فارغًا مؤقتًا).`);
+      } else if (item.href.length === 0) {
+        warn(
+          `members.json[${id}].social[${linkIndex}]: href فارغ — سيُخفى الرابط حتى يتوفر.`,
+        );
+      } else if (!/^(https?:\/\/|mailto:)/.test(item.href)) {
         fail(`members.json[${id}].social[${linkIndex}].href رابط غير صالح.`);
       }
     });
@@ -218,6 +244,20 @@ function checkProjects(
 
 checkProjects(games, "games.json", ["title", "tagline", "description"]);
 checkProjects(software, "software.json", ["tagline", "description"]);
+checkProjects(productions, "productions.json", ["title", "tagline", "description"]);
+
+if (productions) {
+  productions.forEach((item, index) => {
+    const id = String(item.id ?? `#${index}`);
+    if (!Array.isArray(item.formats) || item.formats.length === 0) {
+      fail(`productions.json[${id}].formats يجب أن تكون مصفوفة غير فارغة.`);
+      return;
+    }
+    item.formats.forEach((format, formatIndex) =>
+      checkLocalized(format, `productions.json[${id}].formats[${formatIndex}]`),
+    );
+  });
+}
 
 if (studioSocial) {
   if (studioSocial.length === 0) warn("studio.json: لا توجد قنوات للاستوديو.");

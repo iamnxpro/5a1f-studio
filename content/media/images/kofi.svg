@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-label="Ko-fi">
+  <rect x="1" y="1" width="22" height="22" rx="5" fill="#FF5E5B"/>
+  <path d="M5.6 9.2h10.2v4.6a4.2 4.2 0 0 1-4.2 4.2H9.8a4.2 4.2 0 0 1-4.2-4.2z" fill="#FFFFFF"/>
+  <path d="M15.8 10h1.8a2 2 0 0 1 0 4h-1.7" fill="none" stroke="#FFFFFF" stroke-width="1.4"/>
+  <path d="M8.2 6.4c0-1 1-1.2 1-2.2M11.3 6.4c0-1 1-1.2 1-2.2M14.4 6.4c0-1 1-1.2 1-2.2" fill="none" stroke="#FFFFFF" stroke-width="1.1" stroke-linecap="round" opacity="0.8"/>
+</svg>

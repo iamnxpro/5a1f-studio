@@ -1,0 +1,26 @@
+[
+  {
+    "id": "placeholder-production-01",
+    "title": { "ar": "PLACEHOLDER", "en": "PLACEHOLDER" },
+    "tagline": { "ar": "PLACEHOLDER", "en": "PLACEHOLDER" },
+    "description": { "ar": "PLACEHOLDER", "en": "PLACEHOLDER" },
+    "formats": [{ "ar": "PLACEHOLDER", "en": "PLACEHOLDER" }],
+    "status": "coming_soon",
+    "cover": null,
+    "year": "2026",
+    "links": [],
+    "featured": true
+  },
+  {
+    "id": "placeholder-production-02",
+    "title": { "ar": "PLACEHOLDER", "en": "PLACEHOLDER" },
+    "tagline": { "ar": "PLACEHOLDER", "en": "PLACEHOLDER" },
+    "description": { "ar": "PLACEHOLDER", "en": "PLACEHOLDER" },
+    "formats": [{ "ar": "PLACEHOLDER", "en": "PLACEHOLDER" }],
+    "status": "coming_soon",
+    "cover": null,
+    "year": "2026",
+    "links": [],
+    "featured": false
+  }
+]

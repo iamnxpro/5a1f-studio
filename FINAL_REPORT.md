@@ -523,9 +523,10 @@ redeployed. Deep links were then verified on the production alias.
 - Production deployment URL:
   https://5a1f-q4q38fcr9-iamnxpro.vercel.app
 - Production alias: https://5a1f.vercel.app
-- All tested deep links return 200: `/`, `/software`, `/team`, `/team/amin`,
-  `/team/abdullah`, `/team/kareem`, `/blog`, `/blog/*`, `/privacy`, and unknown
-  paths.
+- All tested deep links return 200: `/`, `/software`, `/productions`,
+  `/services`, `/team`, `/team/amin`, `/team/abdulsamad`, `/team/emad`, `/blog`,
+  `/blog/*`, `/privacy`, and unknown paths. Legacy `/team/abdullah` redirects to
+  `/team/abdulsamad`.
 - HTML is served with `max-age=0, must-revalidate`; hashed `/assets/*` files
   are served with `max-age=31536000, immutable`; icons and the manifest use
   one-day caching.
@@ -548,8 +549,8 @@ These are content/assets, not code defects:
 
 1. **Arabic font files** - waiting for owner-provided `.woff2` files. The site
    uses a system Arabic stack until then and makes no external font request.
-2. **Team avatars** - `amin.png`, `abdullah.png`, `kareem.png` are not present;
-   initials fallbacks are shown.
+2. **Team avatars** - supplied images were vectorized; Emad's picture is still
+   pending, so his initials fallback is shown.
 3. **Games** - two `PLACEHOLDER` entries.
 4. **Software** - one `PLACEHOLDER` entry.
 5. **Team bios/skills** - `PLACEHOLDER` values are hidden rather than invented.
@@ -569,12 +570,15 @@ links were added.
 
 1. Supply the Arabic font files and activate the `@font-face` block in
    `src/styles/fonts.css`.
-2. Add the three team avatars to `content/media/team/`.
+2. Add Emad's picture to `content/media/team/` (the other two are already
+   vectorized).
 3. Replace `PLACEHOLDER` values in:
    - `content/games/games.json`
    - `content/software/software.json`
+   - `content/productions/productions.json`
    - `content/team/members.json`
-4. Fill the five studio social URLs in `content/social/studio.json`.
+4. Fill the pending studio, Abdul Samad, and Emad URLs in `content/social/studio.json`
+   and `content/team/members.json`.
 5. Publish blog posts in `content/blog/<slug>/` using the documented
    frontmatter.
 6. Re-run `npm run check-content` and `npm run build`, then redeploy.
@@ -614,9 +618,9 @@ links were added.
 
 ### Team avatars (vectorized SVG)
 - Vectorized provided team images into clean SVG avatars:
-  `content/media/team/amin.svg`, `content/media/team/abdullah.svg`,
-  `content/media/team/kareem.svg` (source raster images moved out of `content/`
-  to `design/team-source/`, gitignored).
+  `content/media/team/amin.svg` and `content/media/team/abdulsamad.svg`
+  (source raster images moved out of `content/` to `design/team-source/`,
+  gitignored). Emad's avatar remains pending.
 - Updated `content/team/members.json` avatar references and `content/media/README.md`.
 
 ### Verification
@@ -642,7 +646,7 @@ links were added.
 ### Content
 - Added bilingual `country` to all member profiles and displayed it on team
   cards, member profile pages, and the home contact orbit:
-  Amin — Morocco; Abdul Samad — Palestine; Kareem — Jordan; Emad — Sudan.
+  Amin — Morocco; Abdul Samad — Palestine; Emad — Sudan.
 - Added Amin's kunya (`أبو عثمان` / `Abu Othman`), shown as “Also known as” on
   profile cards and pages.
 - Changed the second founder's display name to `عبد الصمد` / `Abdul Samad` and

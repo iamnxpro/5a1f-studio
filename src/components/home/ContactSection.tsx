@@ -130,10 +130,8 @@ function MemberOrbit({ member }: { member: TeamMember }) {
 export function ContactSection() {
   const { t, language } = useLanguage();
   const allTeamLinks = teamMembers.flatMap((member) => member.social);
-  const emailLink = allTeamLinks.find((link) => link.id === "email");
   const email = site.email.trim();
-  const emailIcon =
-    studioSocial.find((link) => link.id === "email")?.icon ?? emailLink?.icon;
+  const emailIcon = studioSocial.find((link) => link.id === "email")?.icon;
   const whatsappIcon = allTeamLinks.find((link) => link.id === "whatsapp")?.icon;
   const [copied, setCopied] = useState(false);
   const timer = useRef<number | null>(null);

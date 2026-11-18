@@ -29,6 +29,8 @@
     "join": "Join us",
     "contact": "Contact",
     "software": "Software",
+    "productions": "Productions",
+    "services": "Request a service",
     "blog": "Blog",
     "team": "Team"
   },
@@ -44,8 +46,8 @@
   },
   "about": {
     "label": "About us",
-    "title": "Four paths, one studio.",
-    "body": "5A1F was born where programming meets visual art: Amin (Abu Othman) from Morocco in software, games, and 2D/3D design; Abdul Samad from Palestine in 3D art; Kareem from Jordan in 2D design; and Emad from Sudan in programming. We work deliberately and prefer correct details over big promises.",
+    "title": "Three paths, one studio.",
+    "body": "5A1F was born where programming meets visual art: Amin (Abu Othman) from Morocco in software, games, and 2D/3D design; Abdul Samad from Palestine in 3D art and artistic productions; and Emad from Sudan in programming. We work deliberately and prefer correct details over big promises.",
     "quote": "We make what we love to play.",
     "teamLabel": "The team",
     "teamTitle": "The people behind 5A1F.",
@@ -70,6 +72,16 @@
     "download": "Download",
     "source": "Source code"
   },
+  "productions": {
+    "label": "Artistic & media productions",
+    "title": "Stories in motion.",
+    "subtitle": "Animation, films, series and other visual productions. This section was requested and is led by Abdul Samad.",
+    "empty": "No productions published yet.",
+    "formats": "Formats",
+    "byAbdulSamad": "Led by Abdul Samad",
+    "attribution": "Abdul Samad, co-founder and 3D artist, requested this section and leads it.",
+    "comingSoonNote": "In production — links unlock at release."
+  },
   "team": {
     "label": "Member profile",
     "member": "Team member",
@@ -91,25 +103,46 @@
       "name": "First name or nickname",
       "age": "Age",
       "ageRange": "Age range",
-      "skills": "Skills & experience",
       "role": "Desired specialty",
+      "department": "Department",
+      "tools": "Tools & Software Mastered",
+      "previousProjects": "Previous Projects",
+      "aiUsage": "AI Usage in Work — please answer honestly",
+      "timeCommitment": "Weekly Time Commitment",
+      "daysPerWeek": "Days per week",
+      "hoursPerDay": "Hours per day",
+      "internetElectricity": "Internet & Electricity Status",
+      "whyJoin": "Why do you want to join the studio?",
+      "whereHeard": "Where did you hear about the studio?",
+      "skills": "Skills & experience",
       "contribution": "What can you offer the studio?",
-      "contactHandle": "Preferred contact handle (e.g. Discord username)"
+      "contactHandle": "Contact Method"
     },
     "placeholders": {
       "name": "Your name or nickname",
       "age": "e.g. 17",
       "skills": "Engines, languages, tools, years of experience…",
       "role": "Choose a specialty",
+      "department": "Choose a department",
+      "tools": "Engines, editors, 3D suites, scripting tools…",
+      "previousProjects": "List past projects and links if you have them.",
+      "aiUsage": "Choose the answer that fits you best",
+      "daysPerWeek": "e.g. 3",
+      "hoursPerDay": "e.g. 2",
+      "internetElectricity": "Describe your connection and power stability.",
+      "whyJoin": "Tell us what draws you to 5A1F.",
+      "whereHeard": "Where did you find us?",
       "contribution": "Briefly describe what you would love to work on.",
-      "contactHandle": "Username only — never write a phone number."
+      "contactHandle": "Add WhatsApp number / Telegram / Discord username / Instagram"
     },
     "ageRange": {
       "under": "Under 18",
       "over": "18 or older"
     },
+    "preLaunchNotice": "By joining the studio, you accept the studio's current status and understand that no salaries are available at this time as we are in the pre-launch and early startup phase until conditions improve.",
+    "acknowledge": "I accept the pre-launch terms",
     "privacyNoticeTitle": "Before you send",
-    "privacyNotice": "Your data is not stored on this site; it is only sent to the studio's WhatsApp when you press send. Do not write a phone number, an address, or a school name. If you are under 18, get a guardian's permission before contacting anyone.",
+    "privacyNotice": "Your data is not stored on this site; it is only sent to the studio's WhatsApp when you press send. If you are under 18, get a guardian's permission before contacting anyone.",
     "submit": "Send application via WhatsApp",
     "submitting": "Preparing…",
     "success": "Your message is ready.",
@@ -118,6 +151,41 @@
       "required": "This field is required.",
       "ageNumber": "Enter a valid age.",
       "ageRange": "Choose an age range.",
+      "number": "Enter a valid number.",
+      "minLength": "This text is too short.",
+      "acknowledgeRequired": "You must accept the pre-launch notice before sending.",
+      "fixFields": "Check the highlighted fields."
+    }
+  },
+  "services": {
+    "label": "Request a service",
+    "title": "Have a project for us?",
+    "subtitle": "Tell us what you need and we will prepare a clear message for the studio — nothing is stored here.",
+    "emailSubject": "Service request",
+    "fields": {
+      "clientName": "Client Name",
+      "serviceType": "Service Type",
+      "description": "Project / Service Description",
+      "notes": "Additional Notes",
+      "timeline": "Preferred Timeline / Deadline (if applicable)",
+      "instructions": "Any Other Instructions"
+    },
+    "placeholders": {
+      "clientName": "Your name or company",
+      "serviceType": "e.g. 3D art, game development, animation",
+      "description": "Describe the service or project you need.",
+      "notes": "Anything else we should know?",
+      "timeline": "e.g. within two weeks, or flexible",
+      "instructions": "Add any final instructions."
+    },
+    "privacyNoticeTitle": "How your request is sent",
+    "privacyNotice": "This page has no backend. Your answers are turned into a WhatsApp message or an email draft inside your browser, then handed to the app you choose so you can send them yourself.",
+    "submitWhatsApp": "Send via WhatsApp",
+    "submitEmail": "Send via Email",
+    "success": "Your message is ready.",
+    "successHint": "Finish sending it in the app that opened.",
+    "errors": {
+      "required": "This field is required.",
       "minLength": "This text is too short.",
       "fixFields": "Check the highlighted fields."
     }
@@ -169,7 +237,7 @@
     "title": "Privacy policy",
     "intro": "We respect our visitors. This page explains what we collect and what we do not, in plain language.",
     "dataTitle": "Data",
-    "dataBody": "5A1F has no server and no database. We store no personal data on this site. The join form assembles a WhatsApp message inside your browser only, then opens it for you to send yourself.",
+    "dataBody": "5A1F has no server and no database. We store no personal data on this site. The join form and the service request form assemble WhatsApp messages or email drafts inside your browser only, then hand them to the app you choose so you can send them yourself.",
     "cookiesTitle": "Cookies",
     "cookiesBody": "We use no tracking or advertising cookies. We only store your local preferences (language, audio, motion) in localStorage on your device.",
     "contactTitle": "Contact",

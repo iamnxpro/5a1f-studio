@@ -4,6 +4,7 @@ import type {
   BlogPost,
   Game,
   Language,
+  Production,
   SiteConfig,
   SocialLink,
   Software,
@@ -53,6 +54,7 @@ export const site = readJson<SiteConfig>("site.json");
 export const teamMembers = readJson<TeamMember[]>("team/members.json");
 export const games = readJson<Game[]>("games/games.json");
 export const software = readJson<Software[]>("software/software.json");
+export const productions = readJson<Production[]>("productions/productions.json");
 export const studioSocial = readJson<SocialLink[]>("social/studio.json");
 
 export const translations = {
@@ -196,6 +198,6 @@ if (import.meta.env.DEV) {
 
   const privateBoard = teamMembers.length;
   console.info(
-    `[content] loaded · ${privateBoard} members · ${games.length} games · ${software.length} software · ${blogPosts.length} posts`,
+    `[content] loaded · ${privateBoard} members · ${games.length} games · ${software.length} software · ${productions.length} productions · ${blogPosts.length} posts`,
   );
 }

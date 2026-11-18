@@ -1,42 +1,49 @@
 [
   {
     "id": "email",
-    "label": { "ar": "البريد", "en": "Email" },
+    "label": { "ar": "البريد الرسمي", "en": "Official email" },
     "href": "mailto:official5a1fstudios@gmail.com",
     "icon": "media/images/gmail.webp",
     "type": "custom"
   },
   {
-    "id": "discord",
-    "label": { "ar": "ديسكورد", "en": "Discord" },
-    "href": "",
-    "icon": "media/images/discord.png",
-    "type": "custom"
-  },
-  {
-    "id": "youtube",
-    "label": { "ar": "يوتيوب", "en": "YouTube" },
-    "href": "",
-    "icon": "media/images/youtube.svg",
-    "type": "custom"
-  },
-  {
-    "id": "instagram",
-    "label": { "ar": "إنستغرام", "en": "Instagram" },
-    "href": "",
-    "icon": "media/images/instagram.webp",
-    "type": "custom"
-  },
-  {
-    "id": "github",
-    "label": { "ar": "جيتهاب", "en": "GitHub" },
+    "id": "github_org",
+    "label": { "ar": "منظمة الاستوديو على جيتهاب", "en": "Studio GitHub Organization" },
     "href": "",
     "icon": "media/images/github.webp",
     "type": "custom"
   },
   {
+    "id": "discord_server",
+    "label": { "ar": "سيرفر ديسكورد الرسمي", "en": "Official Discord Server" },
+    "href": "",
+    "icon": "media/images/discord.png",
+    "type": "custom"
+  },
+  {
+    "id": "whatsapp_channel",
+    "label": { "ar": "قناة واتساب الرسمية", "en": "Official WhatsApp Channel" },
+    "href": "",
+    "icon": "media/images/whatsapp.webp",
+    "type": "custom"
+  },
+  {
+    "id": "paypal",
+    "label": { "ar": "حساب باي بال", "en": "Studio PayPal" },
+    "href": "",
+    "icon": "media/images/paypal.svg",
+    "type": "custom"
+  },
+  {
+    "id": "kofi",
+    "label": { "ar": "صفحة كو-فاي للتبرع", "en": "Studio Ko-fi" },
+    "href": "",
+    "icon": "media/images/kofi.svg",
+    "type": "custom"
+  },
+  {
     "id": "itchio",
-    "label": { "ar": "آيتش.آي.أو", "en": "itch.io" },
+    "label": { "ar": "منصة آيتش.آي.أو", "en": "Itch.io" },
     "href": "",
     "icon": "media/images/itchio.svg",
     "type": "custom"

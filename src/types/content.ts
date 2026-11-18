@@ -37,6 +37,8 @@ export type SiteConfig = {
   };
   joinForm: {
     ageMode: "exact" | "range";
+    departments: JoinRole[];
+    aiUsageOptions: JoinRole[];
     roles: JoinRole[];
   };
 };
@@ -91,6 +93,20 @@ export type Software = {
   platforms: string[];
   specs: SoftwareSpec[];
   links: ContentLink[];
+};
+
+/** Artistic & media productions: animation, films, series and similar work. */
+export type Production = {
+  id: string;
+  title: Localized;
+  tagline: Localized;
+  description: Localized;
+  formats: Localized[];
+  status: WorkStatus;
+  cover: string | null;
+  year: string;
+  links: ContentLink[];
+  featured: boolean;
 };
 
 export type TranslationTree = {

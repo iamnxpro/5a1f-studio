@@ -16,6 +16,8 @@ export const PRIMARY_NAV: NavItem[] = [
   { labelKey: "nav.join", to: "/#join" },
   { labelKey: "nav.contact", to: "/#contact" },
   { labelKey: "nav.software", to: "/software" },
+  { labelKey: "nav.productions", to: "/productions" },
+  { labelKey: "nav.services", to: "/services" },
   { labelKey: "nav.blog", to: "/blog" },
 ];
 
@@ -23,6 +25,8 @@ export const FOOTER_NAV: NavItem[] = [
   { labelKey: "nav.home", to: "/" },
   { labelKey: "nav.team", to: "/team" },
   { labelKey: "nav.software", to: "/software" },
+  { labelKey: "nav.productions", to: "/productions" },
+  { labelKey: "nav.services", to: "/services" },
   { labelKey: "nav.blog", to: "/blog" },
   { labelKey: "footer.privacy", to: "/privacy" },
 ];
