@@ -730,3 +730,61 @@ integration authorization described in section 14.
 1. Emad's profile picture, to vectorize into `content/media/team/emad.svg`.
 2. The links `.txt` file, to populate Emad's portfolio slot, Abdul Samad's Epic
    Games/WhatsApp slots, and the six studio platform slots.
+
+---
+
+## 17. Team, avatar and platform update (2026-11-18)
+
+### Content and assets
+- Configured all six studio platform links: GitHub Organization
+  (`official5a1fstudio`), Discord (`AGKpuRb5`), WhatsApp Channel
+  (`0029Vb98zMkFSAtACEG6IX0T`), PayPal (`5a1fstudio`), Ko-fi (`5a1fstudio`),
+  and Itch.io (`official5a1fstudio.itch.io`).
+- Set Abdul Samad's WhatsApp to `https://wa.me/970598772823`. His Epic Games
+  slot remains intentionally empty.
+- Set Emad's WhatsApp to `https://wa.me/249924879166` and Discord to
+  `https://discord.com/users/1561738177889181697`. The supplied JPEG was traced
+  into `content/media/team/emad.svg`; the raster source is preserved in the
+  gitignored `design/team-source/` folder.
+- Added Hosin as a fourth team member with Instagram
+  (`h.e.7.02_v1`) and Discord (`1418304955361525914`). No photo was supplied,
+  so an original themed `hosin.svg` placeholder was designed. Country, specific
+  role and skills were not invented: the profile uses generic `Team Member` /
+  `عضو الفريق` wording with hidden `PLACEHOLDER` bio/skills.
+- Amin's personal email remains `iamnx.amin.pro@gmail.com` on his profile only;
+  the official studio email remains `official5a1fstudios@gmail.com`.
+- Updated bilingual About copy from three to four paths, added `/team/hosin` to
+  the sitemap, refreshed the READMEs, and taught `scripts/check-content.ts`
+  that intentional `wa.me/<number>` contact links are not privacy leaks.
+
+### Verification
+- `npm run check`: **success** (0 TypeScript errors).
+- `npm run check-content`: **0 errors, 3 warnings, 0 notes**; 235 translation
+  keys matched, and all 18 visual assets are under 1 MB. The three warnings are
+  the intentionally empty Epic Games and Emad portfolio slots plus hidden
+  `PLACEHOLDER` copy.
+- `npm run build`: **success** (chunk-size advisory only).
+- Local production-preview QA: **32/32 checks passed**, with no external hosts,
+  no 4xx responses, and no console errors.
+- Production browser QA at https://5a1f.vercel.app: **32/32 checks passed**,
+  including explicit checks for Hosin on both team pages and his profile, the
+  four-path About copy in both languages, all six studio platform URLs, Emad's
+  and Abdul Samad's contact links, avatar loading, and the `/team/hosin`
+  sitemap entry. No external hosts, 4xx responses, or console errors.
+
+### Deploy
+- Commit: `e7b1426 feat: add Hosin, vectorize Emad avatar, configure studio links`
+  (pushed to `origin/main`).
+- Vercel production deployment: `dpl_DL47qQynQ5zSQhFb3dMLfecNh4Uv` (READY).
+- Alias: https://5a1f.vercel.app
+
+### Still pending from the studio owner
+1. Abdul Samad's Epic Games URL.
+2. Emad's portfolio/links URL.
+3. Real bios, skills, and Hosin's specific role (currently generic and hidden
+   placeholders where unknown).
+
+Native GitHub → Vercel auto-deploy remains blocked by the missing GitHub
+integration authorization described in section 14. CLI deploys work now; after
+authorizing the Vercel GitHub App, run:
+`vercel git connect https://github.com/iamnxpro/5a1f-studio.git --project 5a1f --yes`.
