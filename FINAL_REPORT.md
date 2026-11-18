@@ -680,3 +680,53 @@ links were added.
 
 Native GitHub→Vercel auto-deploy remains blocked by the same missing GitHub
 integration authorization described in section 14.
+
+---
+
+## 16. Comprehensive bilingual update (2026-11-18)
+
+### Content and pages
+- Added `/productions` (`الأعمال الفنية`) using the games/software showcase
+  layout, with Abdul Samad credited as the requested section lead. Content lives
+  in `content/productions/productions.json` with two placeholder entries.
+- Added `/services` (`طلب عمل / خدمة`) matching the Join Us layout. The form has
+  the six requested fields and two no-backend handoffs: WhatsApp (`wa.me`) and
+  email (`mailto:` to the official studio address), both prefilled.
+- Expanded the Join form with Department, Tools & Software Mastered, Previous
+  Projects, the four exact AI-usage answers, Days/Hours per week, Internet &
+  Electricity, Why join, and Where heard. Contact is now `وسيلة تواصل` /
+  `Contact Method` with the exact requested placeholder and no phone-number
+  restriction. The required pre-launch acknowledgment sits beside the Privacy
+  Policy link.
+- Moved `iamnx.amin.pro@gmail.com` to Amin's personal Team profile only. The
+  official studio email remains `official5a1fstudios@gmail.com`.
+- Added pending profile slots for Abdul Samad's Epic Games account and WhatsApp
+  number, and for Emad's portfolio links. Added studio slots for GitHub
+  Organization, Discord Server, WhatsApp Channel, PayPal, Ko-fi, and Itch.io.
+- Removed Kareem completely from content, translations, avatars, sitemap, and
+  documentation. Renamed the second founder's avatar to `abdulsamad.svg`;
+  `/team/abdullah` remains only as a legacy redirect and is never displayed as
+  a name.
+
+### Verification
+- `npm run check-content`: **0 errors, 10 warnings, 0 notes** (235 translation
+  keys matched; warnings are the intentional empty pending `href` values and
+  `PLACEHOLDER` copy).
+- `npm run build`: **success** (chunk-size advisory only).
+- Production browser QA at https://5a1f.vercel.app passed all 21 checks:
+  both languages, no Kareem text, team names/countries, Amin's personal email
+  only on his profile, official email unchanged on home, productions attribution,
+  services field labels and both buttons, prefilled WhatsApp formatting, Join
+  acknowledgment/contact/department/AI fields, legacy redirect, no external
+  hosts, no 4xx responses, and no console errors.
+
+### Deploy
+- Commit: `9f0da6a feat: add productions and service request pages, expand join form, remove Kareem`
+  (pushed to `origin/main`).
+- Vercel production deployment: `dpl_E6BwfK9urXyS3PkefA71xj7qoktL` (READY).
+- Alias: https://5a1f.vercel.app
+
+### Still pending from the studio owner
+1. Emad's profile picture, to vectorize into `content/media/team/emad.svg`.
+2. The links `.txt` file, to populate Emad's portfolio slot, Abdul Samad's Epic
+   Games/WhatsApp slots, and the six studio platform slots.
