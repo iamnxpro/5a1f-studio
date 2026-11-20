@@ -13,7 +13,6 @@ from a remote host at runtime.
 | `content/media/team/amin.svg` | Amin's vector avatar (square, stylized/illustrated; never a real face photo). |
 | `content/media/team/abdulsamad.svg` | Abdul Samad's vector avatar, same rules. The profile id is `abdulsamad`; the legacy `/team/abdullah` URL redirects to it. |
 | `content/media/team/emad.svg` | Emad's vector avatar, traced from the supplied source image in gitignored `design/team-source/`. |
-| `content/media/team/hosin.svg` | Hosin's custom illustrated placeholder avatar (no photo was supplied). |
 
 If an avatar is missing, the UI renders the member's initials. Nothing breaks.
 If the SVG logo is unavailable, `StudioLogo` falls back to the built-in `5A1F`

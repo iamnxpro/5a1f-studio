@@ -42,7 +42,7 @@ or third-party runtime service.
 | `/productions` | Artistic & media productions, led by Abdul Samad |
 | `/services` | Service request / hire-us form with WhatsApp and email handoff |
 | `/team` | Team index |
-| `/team/:memberId` | Team member profile (`amin`, `abdulsamad`, `emad`, `hosin`); the legacy `/team/abdullah` URL redirects to `/team/abdulsamad` |
+| `/team/:memberId` | Team member profile (`amin`, `abdulsamad`, `emad`); the legacy `/team/abdullah` URL redirects to `/team/abdulsamad` |
 | `/blog` | Blog index, including the empty state when there are no posts |
 | `/blog/:slug` | Lazy-loaded Markdown article |
 | `/privacy` | Privacy and data-handling statement |
@@ -253,13 +253,11 @@ Team avatars are expected at:
 content/media/team/amin.svg
 content/media/team/abdulsamad.svg
 content/media/team/emad.svg
-content/media/team/hosin.svg
 ```
 
 Use square, transparent, stylized or illustrated avatars - never a real face
 photo. Emad's SVG was traced from the supplied raster source in the gitignored
-`design/team-source/` folder; Hosin's SVG is an original themed placeholder.
-Keep individual files under 1 MB.
+`design/team-source/` folder. Keep individual files under 1 MB.
 
 Arabic typography is self-hosted from npm: **Amiri** (editorial serif headings) and
 **IBM Plex Sans Arabic** (UI/body), imported in `src/main.tsx` and mapped via
@@ -341,7 +339,7 @@ npm run preview
 `npm run check-content` validates:
 
 - required files and JSON shape;
-- Arabic/English translation key parity (currently 175 keys);
+- Arabic/English translation key parity (currently 235 keys);
 - referenced media paths;
 - image sizes (under 1 MB);
 - privacy leaks in Markdown and content;
@@ -352,7 +350,7 @@ Expected content warnings while the real content is being prepared:
 - 2 member links with empty `href` (Abdul Samad's Epic Games slot and Emad's
   portfolio slot, hidden in the UI);
 - 0 missing team avatars;
-- 47 `PLACEHOLDER` values across games, software, bios, and skills.
+- 44 `PLACEHOLDER` values across games, software, bios, and skills.
 
 The production build is currently clean apart from Vite's advisory that the
 main chunk exceeds 500 kB. It is not a build failure; the main bundle is about
@@ -397,9 +395,9 @@ Because the site is entirely static, no environment variables are required.
 ### Post-deploy checks
 
 - Open `/`, `/software`, `/productions`, `/services`, `/team`, `/team/amin`,
-  `/team/abdulsamad`, `/team/emad`, `/team/hosin`, `/blog`, `/privacy`, and an
-  unknown path to confirm the rewrite and 404 behavior. `/team/abdullah` should
-  redirect to `/team/abdulsamad`.
+  `/team/abdulsamad`, `/team/emad`, `/blog`, `/privacy`, and an unknown path to
+  confirm the rewrite and 404 behavior. `/team/abdullah` should redirect to
+  `/team/abdulsamad`.
 - Confirm the studio social links resolve to the configured GitHub Organization,
   Discord, WhatsApp Channel, PayPal, Ko-fi, and Itch.io URLs.
 - Confirm `/robots.txt`, `/sitemap.xml`, `/site.webmanifest`, `/favicon.svg`,
@@ -417,19 +415,17 @@ Because the site is entirely static, no environment variables are required.
 
 These are intentionally not fabricated:
 
-- **Team avatars**: all four are local SVGs. `amin.svg` and `abdulsamad.svg`
-  were traced from supplied images, `emad.svg` from the supplied JPEG, and
-  `hosin.svg` is a themed illustrated placeholder.
+- **Team avatars**: all three are local SVGs. `amin.svg` and `abdulsamad.svg`
+  were traced from supplied images, and `emad.svg` from the supplied JPEG.
 - **Games**: two placeholder entries; replace titles, descriptions, genres,
   covers, links, and statuses.
 - **Software**: one placeholder entry; replace copy, specs, platforms, and links.
 - **Productions**: two placeholder entries; replace copy, formats, covers, links,
   and statuses. Abdul Samad is already credited as the section lead.
-- **Team bios/skills**: placeholder values are hidden until replaced. Hosin's
-  role is intentionally generic (`Team Member`) until a real role is supplied.
+- **Team bios/skills**: placeholder values are hidden until replaced.
 - **Member links**: Abdul Samad's Epic Games slot and Emad's portfolio slot have
-  empty `href` values. Abdul Samad's WhatsApp, Emad's WhatsApp/Discord, and
-  Hosin's Instagram/Discord are configured.
+  empty `href` values. Abdul Samad's WhatsApp and Emad's WhatsApp/Discord are
+  configured.
 - **Studio social links**: GitHub Organization, Discord Server, WhatsApp
   Channel, PayPal, Ko-fi, and Itch.io are configured; the official email remains
   `official5a1fstudios@gmail.com`.
