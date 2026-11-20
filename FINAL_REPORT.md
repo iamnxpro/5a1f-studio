@@ -788,3 +788,45 @@ Native GitHub → Vercel auto-deploy remains blocked by the missing GitHub
 integration authorization described in section 14. CLI deploys work now; after
 authorizing the Vercel GitHub App, run:
 `vercel git connect https://github.com/iamnxpro/5a1f-studio.git --project 5a1f --yes`.
+
+---
+
+## 18. Team data cleanup (2026-11-20)
+
+### Change
+- Removed the fourth member object (`id: hosin`, display name `Hosin`) from
+  `content/team/members.json`. No separate literal `Hussein` / `حسين` entry
+  existed; this was the only matching team record, so the requested person is
+  now absent from the live team data.
+- Deleted the now-unreferenced `content/media/team/hosin.svg` avatar.
+- Reverted the bilingual About copy to **Three paths, one studio.** /
+  **ثلاثة مسارات، استوديو واحد.** and removed the added-member sentence from
+  both translations.
+- Removed `/team/hosin` from `public/sitemap.xml` and removed all Hosin
+  references from `README.md` and `content/media/README.md`.
+- Confirmed the team UI is fully data-driven: `/team` renders exactly three
+  cards, `FoundationPage`'s team-count stat and the member profile numbering
+  derive from `teamMembers`, and no component hardcodes a fourth slot. Section
+  17 above remains only as the historical record of the earlier deployment and
+  is superseded by this cleanup.
+
+### Verification
+- `npm run check-content`: **0 errors, 3 warnings, 0 notes**; 235 translation
+  keys matched, 17 visual assets under 1 MB, and 44 hidden placeholders. The
+  three warnings are only the intentionally empty Epic Games and Emad portfolio
+  slots plus the aggregate placeholder notice.
+- `npm run build`: **success**, including `tsc --noEmit`; only Vite's standard
+  chunk-size advisory. No `hosin` asset appears in `dist/`.
+- Local production-preview QA: **30/30 checks passed** in Arabic and English,
+  with no external hosts, no 4xx responses, and no console errors.
+- Production browser QA at https://5a1f.vercel.app: **30/30 checks passed**.
+  Explicit checks confirmed no `Hosin`, `Hussein`, `حسين`, `h.e.7.02_v1`, or
+  `1418304955361525914` text in rendered pages; exactly three team cards and
+  three loaded avatars; `/team/hosin` falling back to the branded member-not-found
+  state; and no `/team/hosin` entry in `sitemap.xml`.
+
+### Deploy
+- Commit: `a414720 fix: remove Hosin from team data and clean references`
+  (pushed to `origin/main`).
+- Vercel production deployment: `dpl_ExBWm8WjiuXjf9cAUwdkN6LU6puN` (READY).
+- Alias: https://5a1f.vercel.app
