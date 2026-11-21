@@ -10,7 +10,7 @@ cover: "cover.svg"
 
 Today we are sharing the first release of **Mawthooq** — موثوق in Arabic — a local
 password manager and TOTP authenticator built by **Amin** and **Emad** here at
-5A1F Studio. It is written in Rust, version **v0.1.0** is available to download,
+5A1F Studio. It is written in Rust, version **v0.1.1** is available to download,
 and the app is in active development.
 
 ## What Mawthooq does
@@ -43,8 +43,8 @@ of the 5A1F Studio software track.
 
 ## Get it
 
-Download **v0.1.0** from the
-[GitHub release page](https://github.com/official5a1fstudio/my-vault/releases/tag/v0.1.0).
+Download **v0.1.1** from the
+[GitHub release page](https://github.com/official5a1fstudio/my-vault/releases/tag/v0.1.1).
 You can also find the studio and its other work at
 [5a1f.vercel.app](https://5a1f.vercel.app).
 

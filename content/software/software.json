@@ -7,14 +7,14 @@
       "en": "Your local vault, and your authenticator codes in one place."
     },
     "description": {
-      "ar": "موثوق تطبيق مبني بلغة Rust من تطوير أمين وعماد في استوديو 5A1F. يحفظ حساباتك في خزنة محلية على جهازك، ويولّد رموز TOTP، ويدعم استيراد الحسابات عبر رمز QR، والتقاط نافذة أو منطقة من الشاشة على ويندوز ولينكس. الإصدار v0.1.0 متاح للتحميل، والتطبيق قيد التطوير النشط ولم يخضع لتدقيق أمني، ولا يوفّر مزامنة سحابية.",
-      "en": "Mawthooq is a Rust application built by Amin and Emad at 5A1F Studio. It keeps your accounts in a local vault on your device, generates TOTP codes, supports importing accounts from a QR code, and offers desktop window and region capture on Windows and Linux. Version v0.1.0 is available to download. The app is in active development, has not been security-audited, and has no cloud sync."
+      "ar": "موثوق تطبيق مبني بلغة Rust من تطوير أمين وعماد في استوديو 5A1F. يحفظ حساباتك في خزنة محلية على جهازك، ويولّد رموز TOTP، ويدعم استيراد الحسابات عبر رمز QR، والتقاط نافذة أو منطقة من الشاشة على ويندوز ولينكس. الإصدار v0.1.1 متاح للتحميل، والتطبيق قيد التطوير النشط ولم يخضع لتدقيق أمني، ولا يوفّر مزامنة سحابية.",
+      "en": "Mawthooq is a Rust application built by Amin and Emad at 5A1F Studio. It keeps your accounts in a local vault on your device, generates TOTP codes, supports importing accounts from a QR code, and offers desktop window and region capture on Windows and Linux. Version v0.1.1 is available to download. The app is in active development, has not been security-audited, and has no cloud sync."
     },
     "status": "available",
     "cover": "media/software/mawthooq-cover.svg",
     "platforms": ["Windows", "Android", "Linux", "Debian"],
     "specs": [
-      { "label": { "ar": "الإصدار", "en": "Version" }, "value": "v0.1.0" },
+      { "label": { "ar": "الإصدار", "en": "Version" }, "value": "v0.1.1" },
       { "label": { "ar": "لغة البناء", "en": "Built with" }, "value": "Rust" },
       { "label": { "ar": "التخزين", "en": "Storage" }, "value": "Local" },
       { "label": { "ar": "التدقيق الأمني", "en": "Security audit" }, "value": "Not audited" }
@@ -23,7 +23,7 @@
       {
         "id": "release",
         "label": { "ar": "حمّل موثوق", "en": "Download Mawthooq" },
-        "href": "https://github.com/official5a1fstudio/my-vault/releases/tag/v0.1.0"
+        "href": "https://github.com/official5a1fstudio/my-vault/releases/tag/v0.1.1"
       },
       {
         "id": "website",

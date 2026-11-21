@@ -18,17 +18,17 @@ has been given a specific creative format.
 | 2 | App name (Arabic) | موثوق | [KNOWN FACT] |
 | 3 | Brand lockup | موثوق written large, with `MAWTHOOQ` beneath in spaced capitals | [CREATIVE PROPOSAL] |
 | 4 | Product category | Local password manager + TOTP authenticator | [KNOWN FACT] |
-| 5 | Version | v0.1.0 | [KNOWN FACT] |
+| 5 | Version | v0.1.1 | [KNOWN FACT] |
 | 6 | Release state | First release published; app in active development; not security-audited | [KNOWN FACT] |
 | 7 | Core technology | Rust | [KNOWN FACT] |
 | 8 | Studio name | 5A1F / 5A1F Studio | [KNOWN FACT] |
 | 9 | Developers | Amin and Emad | [KNOWN FACT] |
 | 10 | Amin credit | Co-Founder, Software & Game Developer — Morocco | [KNOWN FACT] |
 | 11 | Emad credit | Programmer — Sudan | [KNOWN FACT] |
-| 12 | Download destination | https://github.com/official5a1fstudio/my-vault/releases/tag/v0.1.0 | [KNOWN FACT] |
+| 12 | Download destination | https://github.com/official5a1fstudio/my-vault/releases/tag/v0.1.1 | [KNOWN FACT] |
 | 13 | Website destination | https://5a1f.vercel.app | [KNOWN FACT] |
 | 14 | Campaign name | "Mawthooq Launch — مفاتيحك على جهازك" | [CREATIVE PROPOSAL] |
-| 15 | Primary objective | Announce v0.1.0 and drive downloads from the GitHub release | [CREATIVE PROPOSAL] |
+| 15 | Primary objective | Announce v0.1.1 and drive downloads from the GitHub release | [CREATIVE PROPOSAL] |
 | 16 | Secondary objective | Set honest expectations: local-only, still in development, not audited | [CREATIVE PROPOSAL] |
 | 17 | Primary audience | Privacy-conscious desktop users who already use a password manager and a separate code app | [CREATIVE PROPOSAL] |
 | 18 | Secondary audience | Arabic-speaking developers and technical users across MENA who read both Arabic and English | [CREATIVE PROPOSAL] |
@@ -38,8 +38,8 @@ has been given a specific creative format.
 | 22 | Key message 4 | Built in Rust by Amin and Emad at 5A1F | [KNOWN FACT] |
 | 23 | Slogan (English) | **Your keys. Your device.** | [CREATIVE PROPOSAL] |
 | 24 | Slogan (Arabic) | **مفاتيحك... على جهازك.** | [CREATIVE PROPOSAL] |
-| 25 | Supporting line (English) | A local vault and TOTP authenticator, built in Rust. v0.1.0 is here. | [CREATIVE PROPOSAL] |
-| 26 | Supporting line (Arabic) | خزنة محلية ومُصدِّق رموز، مبنية بلغة Rust. الإصدار 0.1.0 متاح الآن. | [CREATIVE PROPOSAL] |
+| 25 | Supporting line (English) | A local vault and TOTP authenticator, built in Rust. v0.1.1 is here. | [CREATIVE PROPOSAL] |
+| 26 | Supporting line (Arabic) | خزنة محلية ومُصدِّق رموز، مبنية بلغة Rust. الإصدار 0.1.1 متاح الآن. | [CREATIVE PROPOSAL] |
 | 27 | Tone of voice | Calm, confident, precise, never alarmist or hype-driven | [CREATIVE PROPOSAL] |
 | 28 | Arabic dialect | Modern Standard Arabic with a slightly warm, conversational tone; no local colloquialisms | [CREATIVE PROPOSAL — requested style] |
 | 29 | Languages | Arabic master first, English master second; both get identical structure | [CREATIVE PROPOSAL] |
@@ -62,7 +62,7 @@ has been given a specific creative format.
 | 46 | Subtitles | Bilingual burnt-in captions plus separate SRT files for each language | [CREATIVE PROPOSAL] |
 | 47 | Primary CTA (EN) | **Download Mawthooq** | [CREATIVE PROPOSAL — requested CTA] |
 | 48 | Primary CTA (AR) | **حمّل موثوق** | [CREATIVE PROPOSAL — requested CTA] |
-| 49 | Primary CTA destination | GitHub v0.1.0 release URL (field 12) | [KNOWN FACT] |
+| 49 | Primary CTA destination | GitHub v0.1.1 release URL (field 12) | [KNOWN FACT] |
 | 50 | Secondary CTA (EN/AR) | Visit 5A1F Studio / زُر استوديو 5A1F | [CREATIVE PROPOSAL] |
 | 51 | Secondary CTA destination | https://5a1f.vercel.app | [KNOWN FACT] |
 | 52 | Mandatory disclosure | "In active development. Not security-audited." / "قيد التطوير النشط. لم يخضع لتدقيق أمني." | [KNOWN FACT, creative wording] |

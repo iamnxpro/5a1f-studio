@@ -20,7 +20,7 @@
   <path d="M60 372H530" stroke="#cf6248" stroke-width="4"/>
   <text x="60" y="424" fill="#45473f" font-family="Arial, sans-serif" font-size="24" letter-spacing="2">LOCAL VAULT  +  TOTP AUTHENTICATOR</text>
   <text x="60" y="466" fill="#67675d" font-family="Arial, sans-serif" font-size="21">Rust  /  Windows  /  Android  /  Linux  /  Debian</text>
-  <text x="60" y="512" fill="#254f43" font-family="Arial, sans-serif" font-size="18" font-weight="bold" letter-spacing="3">BUILT BY AMIN AND EMAD     v0.1.0</text>
+  <text x="60" y="512" fill="#254f43" font-family="Arial, sans-serif" font-size="18" font-weight="bold" letter-spacing="3">BUILT BY AMIN AND EMAD     v0.1.1</text>
 
   <g transform="translate(722 130)">
     <rect x="0" y="0" width="392" height="392" fill="#0c100e"/>

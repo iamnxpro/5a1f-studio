@@ -24,5 +24,5 @@
   <text x="290" y="234" fill="#6fe3a1" font-family="Arial, sans-serif" font-size="26" font-weight="bold" letter-spacing="9">MAWTHOOQ</text>
   <path d="M290 258H566" stroke="#cf6248" stroke-width="3"/>
   <text x="290" y="294" fill="#9fb3a4" font-family="Arial, sans-serif" font-size="16" letter-spacing="2">LOCAL VAULT  /  TOTP</text>
-  <text x="290" y="326" fill="#9fb3a4" font-family="Arial, sans-serif" font-size="14" letter-spacing="2">RUST  /  v0.1.0</text>
+  <text x="290" y="326" fill="#9fb3a4" font-family="Arial, sans-serif" font-size="14" letter-spacing="2">RUST  /  v0.1.1</text>
 </svg>
