@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="Mawthooq launch cover">
+  <title>Mawthooq - local vault and TOTP authenticator</title>
+  <defs>
+    <pattern id="grid" width="44" height="44" patternUnits="userSpaceOnUse">
+      <path d="M44 0H0V44" fill="none" stroke="#222420" stroke-opacity="0.07" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <rect width="1200" height="630" fill="#f5f0e5"/>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+  <rect x="0" y="0" width="16" height="630" fill="#254f43"/>
+  <rect x="16" y="0" width="6" height="630" fill="#cf6248"/>
+  <path d="M56 74H1144" stroke="#222420" stroke-opacity="0.18" stroke-width="1"/>
+  <path d="M56 556H1144" stroke="#222420" stroke-opacity="0.18" stroke-width="1"/>
+
+  <text x="58" y="118" fill="#cf6248" font-family="Arial, sans-serif" font-size="19" font-weight="bold" letter-spacing="5">5A1F STUDIO  /  SOFTWARE RELEASE</text>
+
+  <text x="56" y="268" fill="#222420" font-family="Tahoma, Arial, sans-serif" font-size="118" font-weight="bold">موثوق</text>
+  <text x="60" y="336" fill="#254f43" font-family="Arial, sans-serif" font-size="46" font-weight="bold" letter-spacing="14">MAWTHOOQ</text>
+  <path d="M60 372H530" stroke="#cf6248" stroke-width="4"/>
+  <text x="60" y="424" fill="#45473f" font-family="Arial, sans-serif" font-size="24" letter-spacing="2">LOCAL VAULT  +  TOTP AUTHENTICATOR</text>
+  <text x="60" y="466" fill="#67675d" font-family="Arial, sans-serif" font-size="21">Rust  /  Windows  /  Android  /  Linux  /  Debian</text>
+  <text x="60" y="512" fill="#254f43" font-family="Arial, sans-serif" font-size="18" font-weight="bold" letter-spacing="3">BUILT BY AMIN AND EMAD     v0.1.0</text>
+
+  <g transform="translate(722 130)">
+    <rect x="0" y="0" width="392" height="392" fill="#0c100e"/>
+    <rect x="0" y="0" width="392" height="392" fill="none" stroke="#23302a" stroke-width="2"/>
+    <rect x="30" y="30" width="332" height="332" fill="none" stroke="#254f43" stroke-width="2"/>
+
+    <circle cx="196" cy="188" r="112" fill="none" stroke="#f2f5ee" stroke-opacity="0.14" stroke-width="2"/>
+    <path d="M196 66A122 122 0 0 1 318 188" fill="none" stroke="#6fe3a1" stroke-width="5"/>
+    <path d="M196 310A122 122 0 0 1 74 188" fill="none" stroke="#ff7a5c" stroke-width="5"/>
+
+    <rect x="146" y="138" width="100" height="100" fill="none" stroke="#f2f5ee" stroke-width="3"/>
+    <path d="M172 138V112H220V138" fill="none" stroke="#f2f5ee" stroke-width="3"/>
+    <circle cx="196" cy="178" r="14" fill="#cf6248"/>
+    <path d="M196 192V216" stroke="#cf6248" stroke-width="9" stroke-linecap="square"/>
+
+    <g fill="#6fe3a1">
+      <rect x="52" y="318" width="16" height="16"/>
+      <rect x="76" y="318" width="16" height="16"/>
+      <rect x="52" y="342" width="16" height="16"/>
+      <rect x="100" y="342" width="16" height="16"/>
+      <rect x="124" y="318" width="16" height="16"/>
+    </g>
+    <text x="316" y="356" fill="#f2f5ee" font-family="Arial, sans-serif" font-size="17" font-weight="bold">06</text>
+  </g>
+
+  <text x="58" y="600" fill="#67675d" font-family="Arial, sans-serif" font-size="15" letter-spacing="2">IN DEVELOPMENT  /  NOT SECURITY-AUDITED  /  NO CLOUD SYNC</text>
+</svg>
