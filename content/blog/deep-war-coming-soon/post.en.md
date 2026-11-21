@@ -9,8 +9,8 @@ cover: "cover.png"
 # Deep War is coming
 
 Today we are opening the notebook on **Deep War** — **غارق في الحرب** — a new game
-from the games track at 5A1F Studio. It is being built by **Amin** and **Emad**
-in **Godot 4.7.2**. This is a coming-soon note, not a launch: the project is in
+from the games track at 5A1F Studio. It is being built by **Amin** and
+**Abdul Samad** in **Godot 4.7.2**. This is a coming-soon note, not a launch: the project is in
 active development and there is no release date yet.
 
 ## The idea
